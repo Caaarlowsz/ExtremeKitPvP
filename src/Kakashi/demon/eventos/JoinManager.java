@@ -1,8 +1,7 @@
-/*     */ package Kakashi.demon.eventos;
+/*     */
+package Kakashi.demon.eventos;
 
 /*     */ import java.util.Map;
-import Kakashi.demon.Main;
-import Kakashi.demon.utils.Scoreboard;
 
 /*     */ import org.bukkit.ChatColor;
 /*     */ import org.bukkit.GameMode;
@@ -34,6 +33,9 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 /*     */ import org.bukkit.event.weather.WeatherChangeEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import Kakashi.demon.Main;
+import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class JoinManager implements Listener
@@ -87,7 +89,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 		/*     */ }
 
 	/*     */
-	/*     */ @SuppressWarnings("deprecation")
 	@EventHandler
 	/*     */ public void place(BlockPlaceEvent e) {
 		/* 95 */ if (e.getBlock().getTypeId() == 272) {
@@ -172,7 +173,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 	/*     */
 	/*     */
-	/*     */ @SuppressWarnings("deprecation")
 	@EventHandler
 	/*     */ public void onDropItem(PlayerDropItemEvent e)
 	/*     */ {
@@ -255,44 +255,44 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 	/*     */
 	/*     */ @EventHandler
-/*     */   public void inte(PlayerInteractEvent e) {
-/* 258 */     Player p = e.getPlayer();
-/* 259 */     if ((p.getItemInHand().getType() == Material.CHEST) && (
-/* 260 */       (e.getAction() == Action.RIGHT_CLICK_AIR) || 
-/* 261 */       (e.getAction() == Action.RIGHT_CLICK_BLOCK) || 
-/* 262 */       (e.getAction() == Action.LEFT_CLICK_AIR) || 
-/* 263 */       (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
-/* 264 */       p.chat("/kit");
-/*     */     }
-/* 266 */     if ((p.getItemInHand().getType() == Material.PAPER) && (
-/* 267 */       (e.getAction() == Action.RIGHT_CLICK_AIR) || 
-/* 268 */       (e.getAction() == Action.RIGHT_CLICK_BLOCK) || 
-/* 269 */       (e.getAction() == Action.LEFT_CLICK_AIR) || 
-/* 270 */       (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
-/* 271 */       p.chat("/warps");
-/*     */     }
-/* 273 */     if ((p.getItemInHand().getType() == Material.PISTON_BASE) && (
-/* 274 */       (e.getAction() == Action.RIGHT_CLICK_AIR) || 
-/* 275 */       (e.getAction() == Action.RIGHT_CLICK_BLOCK) || 
-/* 276 */       (e.getAction() == Action.LEFT_CLICK_AIR) || 
-/* 277 */       (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
-/* 278 */       p.chat("/extra");
-/*     */     }
-/* 273 */     if ((p.getItemInHand().getType() == Material.ENDER_CHEST) && (
-/* 274 */       (e.getAction() == Action.RIGHT_CLICK_AIR) || 
-/* 275 */       (e.getAction() == Action.RIGHT_CLICK_BLOCK) || 
-/* 276 */       (e.getAction() == Action.LEFT_CLICK_AIR) || 
-/* 277 */       (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
-/* 278 */       p.chat("/kit2");
-/*     */     }
-/* 279 */     if ((p.getItemInHand().getType() == Material.BOOK) && (
-/* 281 */       (e.getAction() == Action.RIGHT_CLICK_AIR) || 
-/* 282 */       (e.getAction() == Action.RIGHT_CLICK_BLOCK) || 
-/* 283 */       (e.getAction() == Action.LEFT_CLICK_AIR) || 
-/* 284 */       (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
-/* 285 */       p.chat("/ajuda");
-/*     */     }
-/*     */   }
+	/*     */ public void inte(PlayerInteractEvent e) {
+		/* 258 */ Player p = e.getPlayer();
+		/* 259 */ if ((p.getItemInHand().getType() == Material.CHEST) && (
+		/* 260 */ (e.getAction() == Action.RIGHT_CLICK_AIR) ||
+		/* 261 */ (e.getAction() == Action.RIGHT_CLICK_BLOCK) ||
+		/* 262 */ (e.getAction() == Action.LEFT_CLICK_AIR) ||
+		/* 263 */ (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
+			/* 264 */ p.chat("/kit");
+			/*     */ }
+		/* 266 */ if ((p.getItemInHand().getType() == Material.PAPER) && (
+		/* 267 */ (e.getAction() == Action.RIGHT_CLICK_AIR) ||
+		/* 268 */ (e.getAction() == Action.RIGHT_CLICK_BLOCK) ||
+		/* 269 */ (e.getAction() == Action.LEFT_CLICK_AIR) ||
+		/* 270 */ (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
+			/* 271 */ p.chat("/warps");
+			/*     */ }
+		/* 273 */ if ((p.getItemInHand().getType() == Material.PISTON_BASE) && (
+		/* 274 */ (e.getAction() == Action.RIGHT_CLICK_AIR) ||
+		/* 275 */ (e.getAction() == Action.RIGHT_CLICK_BLOCK) ||
+		/* 276 */ (e.getAction() == Action.LEFT_CLICK_AIR) ||
+		/* 277 */ (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
+			/* 278 */ p.chat("/extra");
+			/*     */ }
+		/* 273 */ if ((p.getItemInHand().getType() == Material.ENDER_CHEST) && (
+		/* 274 */ (e.getAction() == Action.RIGHT_CLICK_AIR) ||
+		/* 275 */ (e.getAction() == Action.RIGHT_CLICK_BLOCK) ||
+		/* 276 */ (e.getAction() == Action.LEFT_CLICK_AIR) ||
+		/* 277 */ (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
+			/* 278 */ p.chat("/kit2");
+			/*     */ }
+		/* 279 */ if ((p.getItemInHand().getType() == Material.BOOK) && (
+		/* 281 */ (e.getAction() == Action.RIGHT_CLICK_AIR) ||
+		/* 282 */ (e.getAction() == Action.RIGHT_CLICK_BLOCK) ||
+		/* 283 */ (e.getAction() == Action.LEFT_CLICK_AIR) ||
+		/* 284 */ (e.getAction() == Action.LEFT_CLICK_BLOCK))) {
+			/* 285 */ p.chat("/ajuda");
+			/*     */ }
+		/*     */ }
 
 	@EventHandler
 	public void aoentrar(PlayerJoinEvent e) {
@@ -301,7 +301,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 	}
 
 	/*     */
-	/*     */ @SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.HIGHEST)
 	/*     */ public static void semkit(Player p) {
 		p.getInventory().clear();
@@ -313,8 +312,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 		/*     */ KitAPI.setitem(p, Material.CHEST, "§bClasses", 0);
 		/* 305 */ KitAPI.setitem(p, Material.ENDER_CHEST, "§bClasses 2", 1);
 		/* 305 */ KitAPI.setitem(p, Material.PISTON_BASE, "§bMenu", 4);
-		/* 305 */ KitAPI.setitem(p, Material.PAPER, "§bWarps", 7);;
-		/* 305 */ KitAPI.setitem(p, Material.BOOK, "§bAjuda", 8);;
+		/* 305 */ KitAPI.setitem(p, Material.PAPER, "§bWarps", 7);
+		;
+		/* 305 */ KitAPI.setitem(p, Material.BOOK, "§bAjuda", 8);
+		;
 		/*     */ }
 
 	/*     */
@@ -343,7 +344,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 		/*     */ }
 
 	/*     */
-	/*     */ @SuppressWarnings("deprecation")
 	@EventHandler
 	/*     */ public void join(PlayerJoinEvent event)
 	/*     */ {
@@ -481,7 +481,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 	/*     */
 	/*     */
-	/*     */ @SuppressWarnings("deprecation")
 	@EventHandler
 	/*     */ public void aoDropar(PlayerDropItemEvent e)
 	/*     */ {
@@ -563,8 +562,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 	/*     */ @EventHandler
 	/*     */ public void msgMOTD(ServerListPingEvent ev)
 	/*     */ {
-		/* 625 */ ev
-				.setMotd("      §bKITPVP §bž¼ §aServidor de KitPvP\n           §eRemovemos Todo o §6§lLAG");
+		/* 625 */ ev.setMotd("      §bKITPVP §bž¼ §aServidor de KitPvP\n           §eRemovemos Todo o §6§lLAG");
 		/*     */ }
 	/*     */
 }
