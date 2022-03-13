@@ -22,7 +22,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.potion.PotionEffect;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -30,10 +30,10 @@ import Kakashi.demon.utils.Scoreboard;
 /*     */
 /*     */ public class Pesadelo/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Pesadelo(Main plugin)
+	/*     */ public Pesadelo(ExtremePvP plugin)
 	/*     */ {
 		/* 35 */ this.plugin = plugin;
 		/*     */ }
@@ -69,7 +69,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* /* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 64 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 64 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -78,7 +78,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 73 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 73 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 76 */ return false;
@@ -88,7 +88,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 81 */ p.getInventory().clear();
-		/* 82 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cPesadelo!");
+		/* 82 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cPesadelo!");
 		KitAPI.setKit(p, "Pesadelo");
 		Scoreboard.iscoriboard(p);
 		/* 83 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -113,11 +113,11 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ {
 			/* 104 */ if (cooldown.contains(p))
 			/*     */ {
-				/* 106 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce nao pode causar pesadelos ainda , Freddy!");
+				/* 106 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao pode causar pesadelos ainda , Freddy!");
 				/* 107 */ return;
 				/*     */ }
 			/* 109 */ cooldown.add(p);
-			/* 110 */ p.sendMessage(ChatColor.BLACK + "§4§lKIT §7Freddy , voce causou um pesadelo!");
+			/* 110 */ p.sendMessage(ChatColor.BLACK + "ï¿½4ï¿½lKIT ï¿½7Freddy , voce causou um pesadelo!");
 			/* 111 */ for (Entity target : p.getNearbyEntities(15.0D, 15.0D, 15.0D)) {
 				/* 112 */ if ((target instanceof Player))
 				/*     */ {
@@ -133,7 +133,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ public void run()
 				/*     */ {
 					/* 125 */ Pesadelo.cooldown.remove(p);
-					/* 126 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Vai em frente Freddy , cause a desgraça!");
+					/* 126 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Vai em frente Freddy , cause a desgraï¿½a!");
 					/*     */ }
 				/* 128 */ }, 1200L);
 			/*     */ }

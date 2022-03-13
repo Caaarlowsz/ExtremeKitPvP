@@ -11,15 +11,15 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.inventory.meta.SkullMeta;
 
 /*    */
-/*    */ import Kakashi.demon.Main;
+/*    */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */ public class Head/*    */ implements CommandExecutor
 /*    */ {
-	/*    */ Main main;
+	/*    */ ExtremePvP main;
 
 	/*    */
-	/*    */ public Head(Main plugin)
+	/*    */ public Head(ExtremePvP plugin)
 	/*    */ {
 		/* 21 */ plugin = this.main;
 		/*    */ }
@@ -45,7 +45,7 @@ package Kakashi.demon.comandos;
 				/* 41 */ skullMeta.setOwner(args[0]);
 				/* 42 */ skullItem.setItemMeta(skullMeta);
 				/* 43 */ player1.getInventory().addItem(new ItemStack[] { skullItem });
-				/* 44 */ player1.sendMessage("§b§lRokuZ§f§lKits §6§l> §7§oVoce pegou uma §c§ohead.");
+				/* 44 */ player1.sendMessage("ï¿½bï¿½lRokuZï¿½fï¿½lKits ï¿½6ï¿½l> ï¿½7ï¿½oVoce pegou uma ï¿½cï¿½ohead.");
 				/*    */ }
 			/*    */ }
 		/* 47 */ return false;

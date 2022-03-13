@@ -20,17 +20,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerJoinEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Achilles/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Achilles(Main plugin)
+	/*     */ public Achilles(ExtremePvP plugin)
 	/*     */ {
 		/* 33 */ this.plugin = plugin;
 		/*     */ }
@@ -66,7 +66,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 61 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 63 */ jogador.sendMessage("§4§lKIT §7Voce escolheu §cVoce ja selecionou um kit !");
+					/* 63 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -75,7 +75,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 72 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT Voce nao possue este kit !");
+				/* 72 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT Voce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 75 */ return false;
@@ -85,7 +85,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 80 */ p.getInventory().clear();
-		/* 81 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cAchilles!");
+		/* 81 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cAchilles!");
 		Scoreboard.iscoriboard(p);
 		KitAPI.setKit(p, "Achilles");
 		/* 82 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -129,7 +129,7 @@ import Kakashi.demon.utils.Scoreboard;
 					/*     */ {
 						/* 122 */ hit.put(d, p);
 						/* 123 */ d.sendMessage(
-								ChatColor.RED + "§4§lKIT §7Ele é um achilles , agaiche para dar mais dano nele.");
+								ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Ele ï¿½ um achilles , agaiche para dar mais dano nele.");
 						/* 124 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 						/*     */ {
 							/*     */ public void run()

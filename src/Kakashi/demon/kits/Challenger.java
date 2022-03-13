@@ -23,7 +23,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.potion.PotionEffect;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 import Kakashi.demon.utils.Uteis;
@@ -59,12 +59,12 @@ import Kakashi.demon.utils.Uteis;
 			/* 52 */ if ((p.getItemInHand().getType() == Material.getMaterial(20)) &&
 			/* 53 */ (challenger.contains(p))) {
 				/* 54 */ if (Uteis.hasCooldown(p)) {
-					/* 55 */ p.sendMessage("§4§lKIT §cAguarde " + Uteis.getCooldown(p) + " segundos!");
+					/* 55 */ p.sendMessage("ï¿½4ï¿½lKIT ï¿½cAguarde " + Uteis.getCooldown(p) + " segundos!");
 					/* 56 */ return;
 					/*     */ }
-				/* 58 */ Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				/* 58 */ Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 					/*     */ public void run() {
-						/* 60 */ p.sendMessage("§4§lKIT §7§aVoce não esta mais em cooldown!");
+						/* 60 */ p.sendMessage("ï¿½4ï¿½lKIT ï¿½7ï¿½aVoce nï¿½o esta mais em cooldown!");
 						/*     */ }
 					/* 62 */ }, 400L);
 				/* 63 */ Location loc3 = new Location(p.getWorld(), p.getLocation().getX(),
@@ -77,7 +77,7 @@ import Kakashi.demon.utils.Uteis;
 						/* 69 */ for (int bY = -1; bY <= 2; bY++) {
 							/* 70 */ Block b = loc3.clone().add(bX, bY, bZ).getBlock();
 							/* 71 */ if ((!b.isEmpty()) || (b.getLocation().getBlock().getType() != Material.AIR)) {
-								/* 72 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7A blocos encima de você");
+								/* 72 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7A blocos encima de vocï¿½");
 								/* 73 */ return;
 								/*     */ }
 							/* 75 */ Uteis.addCooldown(p, 20);
@@ -91,7 +91,7 @@ import Kakashi.demon.utils.Uteis;
 							/* 83 */ for (final Location loc11 : cuboid) {
 								/* 84 */ loc11.getBlock().setType(Material.GLASS);
 								/* 85 */ p2.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 200, 5));
-								/* 86 */ Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(),
+								/* 86 */ Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(),
 										new Runnable() {
 											/*     */ public void run() {
 												/* 88 */ loc11.getBlock().setType(Material.AIR);
@@ -117,7 +117,7 @@ import Kakashi.demon.utils.Uteis;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 109 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 109 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -126,7 +126,7 @@ import Kakashi.demon.utils.Uteis;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 118 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possui este kit !");
+				/* 118 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possui este kit !");
 				/*     */ }
 			/*     */ }
 		/* 121 */ return false;
@@ -136,7 +136,7 @@ import Kakashi.demon.utils.Uteis;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 126 */ p.getInventory().clear();
-		/* 127 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cChallenger!");
+		/* 127 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cChallenger!");
 		KitAPI.setKit(p, "Challenger");
 		Scoreboard.iscoriboard(p);
 		/* 128 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);

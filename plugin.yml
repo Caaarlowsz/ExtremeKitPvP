@@ -1,6 +1,6 @@
 name: KITPVP
 version: 1.0
-main: Kakashi.demon.Main
+main: com.github.caaarlowsz.extrememc.kitpvp.Main
 commands:
   check:
   kit:

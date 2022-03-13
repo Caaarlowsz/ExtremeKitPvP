@@ -11,15 +11,15 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.scheduler.BukkitRunnable;
 
 /*    */
-/*    */ import Kakashi.demon.Main;
+/*    */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */ public class Crash implements CommandExecutor
 /*    */ {
-	/*    */ public static Main plugin;
+	/*    */ public static ExtremePvP plugin;
 
 	/*    */
-	/*    */ public Crash(Main main)
+	/*    */ public Crash(ExtremePvP main)
 	/*    */ {
 		/* 20 */ plugin = main;
 		/*    */ }
@@ -42,13 +42,13 @@ package Kakashi.demon.comandos;
 				/* 36 */ sender.sendMessage(ChatColor.RED + "O jogador especificado nÃ£o foi encontrado!");
 				/* 37 */ return true;
 				/*    */ }
-			/* 39 */ sender.sendMessage("§8[§6§lRK§8] Preparando para crashar o jogador " + ChatColor.GOLD
+			/* 39 */ sender.sendMessage("ï¿½8[ï¿½6ï¿½lRKï¿½8] Preparando para crashar o jogador " + ChatColor.GOLD
 					+ other.getName() + ChatColor.GRAY + "...");
 			/* 40 */ Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new BukkitRunnable() {
 				/*    */ public void run() {
 					/* 42 */ Crash.this.inv = Bukkit.createInventory(null, 756);
 					/* 43 */ other.openInventory(Crash.this.inv);
-					/* 44 */ sender.sendMessage("§8[§6§lRK§8] Jogador crashado!");
+					/* 44 */ sender.sendMessage("ï¿½8[ï¿½6ï¿½lRKï¿½8] Jogador crashado!");
 					/*    */ }
 				/* 46 */ }, 35L);
 			/*    */ }

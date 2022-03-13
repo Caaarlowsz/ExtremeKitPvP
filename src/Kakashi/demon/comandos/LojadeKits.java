@@ -16,25 +16,25 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.Dinheiro;
 
 public class LojadeKits implements Listener, CommandExecutor {
 
 	public void MoneyErro(Player p, String k, int m) {
-		p.sendMessage(" Você não tem §c" + m + " §7De Coins Para comprar esse Kit");
+		p.sendMessage(" Vocï¿½ nï¿½o tem ï¿½c" + m + " ï¿½7De Coins Para comprar esse Kit");
 		p.closeInventory();
 	}
 
 	public void Jatem(Player p) {
-		p.sendMessage(" Você já possui esse Kit !");
+		p.sendMessage(" Vocï¿½ jï¿½ possui esse Kit !");
 		p.closeInventory();
 	}
 
 	public void Sucesso(Player p, String k) {
-		p.sendMessage(" Parabéns você comprou o Kit §c" + k);
-		Main.getInstance().loja.set(p.getName().toLowerCase() + "." + k, Boolean.valueOf(true));
-		Main.getInstance().save2();
+		p.sendMessage(" Parabï¿½ns vocï¿½ comprou o Kit ï¿½c" + k);
+		ExtremePvP.getInstance().loja.set(p.getName().toLowerCase() + "." + k, Boolean.valueOf(true));
+		ExtremePvP.getInstance().save2();
 		p.closeInventory();
 	}
 
@@ -42,74 +42,74 @@ public class LojadeKits implements Listener, CommandExecutor {
 	/*     */ {
 		Player p = (Player) sender;
 		/* 184 */ if (!(sender instanceof Player)) {
-			/* 185 */ sender.sendMessage("§7[§cErro§7] §cApenas jogadores podem executar esse comando");
+			/* 185 */ sender.sendMessage("ï¿½7[ï¿½cErroï¿½7] ï¿½cApenas jogadores podem executar esse comando");
 			/* 186 */ return true;
 			/*     */ }
-		Inventory inv = Bukkit.getServer().createInventory(p, 27, "§c§nLoja de Kits");
+		Inventory inv = Bukkit.getServer().createInventory(p, 27, "ï¿½cï¿½nLoja de Kits");
 
 		ItemStack vidro = new ItemStack(Material.getMaterial(160), 1, (short) 15);
 		ItemMeta zvidro = vidro.getItemMeta();
-		zvidro.setDisplayName("§b§lRokuZ§f§lKits");
+		zvidro.setDisplayName("ï¿½bï¿½lRokuZï¿½fï¿½lKits");
 		vidro.setItemMeta(zvidro);
 
 		ItemStack vidro1 = new ItemStack(Material.getMaterial(160), 1, (short) 14);
 		ItemMeta zvidro1 = vidro1.getItemMeta();
-		zvidro1.setDisplayName("§b§lRokuZ§f§lKits");
+		zvidro1.setDisplayName("ï¿½bï¿½lRokuZï¿½fï¿½lKits");
 		vidro1.setItemMeta(zvidro1);
 
 		ItemStack Reaper = new ItemStack(Material.WOOD_HOE);
 		ItemMeta zReaper = Reaper.getItemMeta();
-		zReaper.setDisplayName("§c§nReaper");
+		zReaper.setDisplayName("ï¿½cï¿½nReaper");
 		ArrayList<String> descpyro = new ArrayList<String>();
-		descpyro.add(ChatColor.GRAY + "§7§o§n15.000 MCoins");
+		descpyro.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n15.000 MCoins");
 		zReaper.setLore(descpyro);
 		Reaper.setItemMeta(zReaper);
 
 		ItemStack Anchor = new ItemStack(Material.ANVIL);
 		ItemMeta zAnchor = Anchor.getItemMeta();
-		zAnchor.setDisplayName("§c§nAnchor");
+		zAnchor.setDisplayName("ï¿½cï¿½nAnchor");
 		ArrayList<String> descpyros = new ArrayList<String>();
-		descpyros.add(ChatColor.GRAY + "§7§o§n15.000 MCoins");
+		descpyros.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n15.000 MCoins");
 		zAnchor.setLore(descpyros);
 		Anchor.setItemMeta(zAnchor);
 
 		ItemStack Critical = new ItemStack(Material.GOLDEN_APPLE);
 		ItemMeta zCritical = Critical.getItemMeta();
-		zCritical.setDisplayName("§c§nCritical");
+		zCritical.setDisplayName("ï¿½cï¿½nCritical");
 		ArrayList<String> v = new ArrayList<String>();
-		v.add(ChatColor.GRAY + "§7§o§n15.000 MCoins");
+		v.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n15.000 MCoins");
 		zCritical.setLore(v);
 		Critical.setItemMeta(zCritical);
 
 		ItemStack Ninja = new ItemStack(Material.NETHER_STAR);
 		ItemMeta zNinja = Ninja.getItemMeta();
-		zNinja.setDisplayName("§c§nAjnin");
+		zNinja.setDisplayName("ï¿½cï¿½nAjnin");
 		ArrayList<String> n = new ArrayList<String>();
-		n.add(ChatColor.GRAY + "§7§o§n20.000 MCoins");
+		n.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n20.000 MCoins");
 		zNinja.setLore(n);
 		Ninja.setItemMeta(zNinja);
 
 		ItemStack Grappler = new ItemStack(Material.LEASH);
 		ItemMeta zGrappler = Grappler.getItemMeta();
-		zGrappler.setDisplayName("§c§nGrappler");
+		zGrappler.setDisplayName("ï¿½cï¿½nGrappler");
 		ArrayList<String> g = new ArrayList<String>();
-		g.add(ChatColor.GRAY + "§7§o§n25.000 MCoins");
+		g.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n25.000 MCoins");
 		zGrappler.setLore(g);
 		Grappler.setItemMeta(zGrappler);
 
 		ItemStack Thor = new ItemStack(Material.WOOD_AXE);
 		ItemMeta zThor = Thor.getItemMeta();
-		zThor.setDisplayName("§c§nThor");
+		zThor.setDisplayName("ï¿½cï¿½nThor");
 		ArrayList<String> t = new ArrayList<String>();
-		t.add(ChatColor.GRAY + "§7§o§n20.000 MCoins");
+		t.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n20.000 MCoins");
 		zThor.setLore(t);
 		Thor.setItemMeta(zThor);
 
 		ItemStack Negresco = new ItemStack(Material.COAL_BLOCK);
 		ItemMeta zNegresco = Negresco.getItemMeta();
-		zNegresco.setDisplayName("§c§nNegresco");
+		zNegresco.setDisplayName("ï¿½cï¿½nNegresco");
 		ArrayList<String> ne = new ArrayList<String>();
-		ne.add(ChatColor.GRAY + "§7§o§n15.000 MCoins");
+		ne.add(ChatColor.GRAY + "ï¿½7ï¿½oï¿½n15.000 MCoins");
 		zNegresco.setLore(ne);
 		Negresco.setItemMeta(zNegresco);
 
@@ -149,18 +149,18 @@ public class LojadeKits implements Listener, CommandExecutor {
 	@EventHandler
 	public void click(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
-		if (e.getInventory().getTitle().equals("§c§nLoja de Kits")) {
+		if (e.getInventory().getTitle().equals("ï¿½cï¿½nLoja de Kits")) {
 			if (e.getCurrentItem().getType() == Material.getMaterial(160)) {
 				e.setCancelled(true);
 				return;
 			}
 
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§b§lRokuZ§f§lKits")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½bï¿½lRokuZï¿½fï¿½lKits")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nAnchor")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nAnchor")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit.Anchor")) {
@@ -178,7 +178,7 @@ public class LojadeKits implements Listener, CommandExecutor {
 				return;
 			}
 
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nAjnin")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nAjnin")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit2.ajnin")) {
@@ -196,7 +196,7 @@ public class LojadeKits implements Listener, CommandExecutor {
 				return;
 			}
 
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nReaper")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nReaper")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit.Reaper")) {
@@ -214,7 +214,7 @@ public class LojadeKits implements Listener, CommandExecutor {
 				return;
 			}
 
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nGrappler")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nGrappler")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit.Grappler")) {
@@ -232,7 +232,7 @@ public class LojadeKits implements Listener, CommandExecutor {
 				return;
 			}
 
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nNegresco")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nNegresco")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit.Negresco")) {
@@ -250,7 +250,7 @@ public class LojadeKits implements Listener, CommandExecutor {
 				return;
 			}
 
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nThor")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nThor")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit.Thor")) {
@@ -267,7 +267,7 @@ public class LojadeKits implements Listener, CommandExecutor {
 				}
 				return;
 			}
-			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§c§nCritical")) {
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½cï¿½nCritical")) {
 				e.setCancelled(true);
 				p.closeInventory();
 				if (!p.hasPermission("kit.Critical")) {

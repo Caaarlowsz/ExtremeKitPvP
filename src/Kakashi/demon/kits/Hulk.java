@@ -23,17 +23,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerJoinEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Hulk/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Hulk(Main plugin)
+	/*     */ public Hulk(ExtremePvP plugin)
 	/*     */ {
 		/* 36 */ this.plugin = plugin;
 		/*     */ }
@@ -69,7 +69,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 65 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 65 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -88,7 +88,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 82 */ p.getInventory().clear();
-		/* 83 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cHulk!");
+		/* 83 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cHulk!");
 		KitAPI.setKit(p, "Hulk");
 		Scoreboard.iscoriboard(p);
 		/* 84 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -109,7 +109,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 102 */ e.setCancelled(true);
 				/* 103 */ d.damage(1.0D, p);
-				/* 104 */ d.sendMessage(ChatColor.RED + "§4§lKIT §7Bata no seu passageiro com o botao esquerdo!");
+				/* 104 */ d.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Bata no seu passageiro com o botao esquerdo!");
 				/*     */ }
 			/*     */ }
 		/*     */ }
@@ -161,17 +161,17 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ }
 			/* 152 */ if (hulk.contains(r))
 			/*     */ {
-				/* 154 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Ja tem alguem , espere ele sair!");
+				/* 154 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Ja tem alguem , espere ele sair!");
 				/* 155 */ return;
 				/*     */ }
 			/* 157 */ if (cooldown.contains(p))
 			/*     */ {
-				/* 159 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Calma hulkzao!");
+				/* 159 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Calma hulkzao!");
 				/* 160 */ return;
 				/*     */ }
 			/* 162 */ cooldown.add(p);
 			/* 163 */ p.setPassenger(r);
-			/* 164 */ r.sendMessage(ChatColor.RED + "§4§lKIT §7Um hulk te prendeu , aperte shift para fugir!");
+			/* 164 */ r.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Um hulk te prendeu , aperte shift para fugir!");
 			/* 165 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 			/*     */ {
 				/*     */ public void run()

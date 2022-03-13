@@ -13,7 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.JoinManager;
 
 public class Clicktest implements CommandExecutor, Listener {
@@ -30,12 +30,12 @@ public class Clicktest implements CommandExecutor, Listener {
 		if ((sela.contains(p)) && (e.getAction() == Action.LEFT_CLICK_AIR)) {
 			p.setLevel(p.getLevel() + 1);
 
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
 					if (Clicktest.sela.contains(p)) {
 						Clicktest.sela.remove(p);
-						p.sendMessage("§bVocê fez " + p.getLevel() + " clicks em 10 segundos");
-						p.sendMessage("§bVocê fez em media " + p.getLevel() / 10 + "  clicks por segundo!");
+						p.sendMessage("ï¿½bVocï¿½ fez " + p.getLevel() + " clicks em 10 segundos");
+						p.sendMessage("ï¿½bVocï¿½ fez em media " + p.getLevel() / 10 + "  clicks por segundo!");
 
 						JoinManager.semkit(p);
 						p.teleport(p.getWorld().getSpawnLocation());
@@ -46,7 +46,7 @@ public class Clicktest implements CommandExecutor, Listener {
 				}
 			}, 200L);
 
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
 					p.setLevel(0);
 					Clicktest.sela.remove(p);
@@ -63,37 +63,37 @@ public class Clicktest implements CommandExecutor, Listener {
 
 			p.getInventory().clear();
 
-			p.sendMessage("§bO ClickTeste ira começar em 5 segundos");
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			p.sendMessage("ï¿½bO ClickTeste ira comeï¿½ar em 5 segundos");
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
-					p.sendMessage("§bO ClickTeste ira começar em 4 segundos");
+					p.sendMessage("ï¿½bO ClickTeste ira comeï¿½ar em 4 segundos");
 				}
 			}, 20L);
 
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
-					p.sendMessage("§bO ClickTeste ira começar em 3 segundos");
+					p.sendMessage("ï¿½bO ClickTeste ira comeï¿½ar em 3 segundos");
 				}
 			}, 40L);
 
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
-					p.sendMessage("§bO ClickTeste ira começar em 2 segundos");
+					p.sendMessage("ï¿½bO ClickTeste ira comeï¿½ar em 2 segundos");
 				}
 			}, 60L);
 
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
-					p.sendMessage("§bO ClickTeste ira começar em 1 segundo");
+					p.sendMessage("ï¿½bO ClickTeste ira comeï¿½ar em 1 segundo");
 				}
 			}, 80L);
 
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 				public void run() {
 					p.sendMessage("  ");
 					p.sendMessage("  ");
-					p.sendMessage("§bO ClickTeste Começou");
-					p.sendMessage("§b§bApenas os Clicks no Ar Serão Contados");
+					p.sendMessage("ï¿½bO ClickTeste Comeï¿½ou");
+					p.sendMessage("ï¿½bï¿½bApenas os Clicks no Ar Serï¿½o Contados");
 					p.sendMessage("  ");
 					p.sendMessage("  ");
 					Clicktest.sela.add(p);

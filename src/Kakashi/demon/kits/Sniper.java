@@ -25,15 +25,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 
 public class Sniper implements Listener, CommandExecutor {
-	public static Main plugin;
+	public static ExtremePvP plugin;
 	public static ArrayList<String> reload = new ArrayList<String>();
 	public static HashMap<String, Long> cooldown = new HashMap<String, Long>();
 
-	public Sniper(Main main) {
+	public Sniper(ExtremePvP main) {
 		plugin = main;
 	}
 
@@ -66,7 +66,7 @@ public class Sniper implements Listener, CommandExecutor {
 				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 					public void run() {
 						if (KitAPI.getkit(p) == ("Sniper")) {
-							p.sendMessage("§4§lKIT: §7Sniper Recarregada!");
+							p.sendMessage("ï¿½4ï¿½lKIT: ï¿½7Sniper Recarregada!");
 							reload.remove(p.getName());
 						}
 					}
@@ -93,11 +93,11 @@ public class Sniper implements Listener, CommandExecutor {
 		Player p = (Player) sender;
 		ItemStack dima = new ItemStack(Material.STONE_SWORD);
 		ItemMeta souperaa = dima.getItemMeta();
-		souperaa.setDisplayName("§cSword");
+		souperaa.setDisplayName("ï¿½cSword");
 		dima.setItemMeta(souperaa);
 		ItemStack sopaa = new ItemStack(Material.IRON_BARDING);
 		ItemMeta sopasa = sopaa.getItemMeta();
-		sopasa.setDisplayName("§6CheyTac M200");
+		sopasa.setDisplayName("ï¿½6CheyTac M200");
 		sopaa.setItemMeta(sopasa);
 		ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 		ItemMeta sopas = sopa.getItemMeta();
@@ -106,15 +106,15 @@ public class Sniper implements Listener, CommandExecutor {
 		dima.addEnchantment(Enchantment.DURABILITY, 3);
 		if (cmd.equalsIgnoreCase("sniper")) {
 			if (KitAPI.getkit(p) == ("Sniper")) {
-				p.sendMessage("§4§lKIT §7§cVoce ja esta usando um kit");
+				p.sendMessage("ï¿½4ï¿½lKIT ï¿½7ï¿½cVoce ja esta usando um kit");
 				return true;
 			}
 			if (!p.hasPermission("kit.sniper")) {
-				p.sendMessage("§4§lKIT §7§cVoce nao tem esse kit!");
+				p.sendMessage("ï¿½4ï¿½lKIT ï¿½7ï¿½cVoce nao tem esse kit!");
 				return true;
 			}
 			KitAPI.setKit(p, "Sniper");
-			p.sendMessage("§4§lKIT §7Voce escolheu §cSniper");
+			p.sendMessage("ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cSniper");
 			p.setGameMode(GameMode.SURVIVAL);
 			p.getInventory().setArmorContents(null);
 			p.getInventory().clear();

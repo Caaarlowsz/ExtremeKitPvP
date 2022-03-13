@@ -12,18 +12,18 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.entity.Player;
 /*    */ import org.bukkit.event.Listener;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */
 /*    */
 /*    */ public class Inventario/*    */ implements CommandExecutor, Listener
 /*    */ {
-	/*    */ Main main;
+	/*    */ ExtremePvP main;
 	/* 20 */ public static final List<Player> admin = new ArrayList<>();
 
 	/*    */
-	/*    */ public Inventario(Main plugin)
+	/*    */ public Inventario(ExtremePvP plugin)
 	/*    */ {
 		/* 24 */ plugin = this.main;
 		/*    */ }

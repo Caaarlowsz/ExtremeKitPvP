@@ -21,7 +21,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.potion.PotionEffect;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -29,10 +29,10 @@ import Kakashi.demon.utils.Scoreboard;
 /*     */
 /*     */ public class Assassin/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Assassin(Main plugin)
+	/*     */ public Assassin(ExtremePvP plugin)
 	/*     */ {
 		/* 34 */ this.plugin = plugin;
 		/*     */ }
@@ -71,7 +71,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 66 */ jogador.sendMessage("§c§l§oVoce ja selecionou um kit !");
+					/* 66 */ jogador.sendMessage("ï¿½cï¿½lï¿½oVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -90,7 +90,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void giveKit(Player p)
 	/*     */ {
 		/* 83 */ p.getInventory().clear();
-		/* 84 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cAssassin!");
+		/* 84 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cAssassin!");
 		Scoreboard.iscoriboard(p);
 		KitAPI.setKit(p, "Assassin");
 		/* 85 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -115,19 +115,19 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ }
 		/* 107 */ if (cooldown.contains(e.getPlayer()))
 		/*     */ {
-			/* 109 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §7Voce nao pode assassinar agora!");
+			/* 109 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao pode assassinar agora!");
 			/* 110 */ return;
 			/*     */ }
 		/* 112 */ e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 35, 2));
 		/* 113 */ e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 35, 2));
 		/* 114 */ cooldown.add(e.getPlayer());
-		/* 115 */ e.getPlayer().sendMessage(ChatColor.DARK_RED + "§4§lKIT §7Hora do assassinato!");
+		/* 115 */ e.getPlayer().sendMessage(ChatColor.DARK_RED + "ï¿½4ï¿½lKIT ï¿½7Hora do assassinato!");
 		/* 116 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 		/*     */ {
 			/*     */ public void run()
 			/*     */ {
 				/* 120 */ e.getPlayer()
-						.sendMessage(ChatColor.RED + "§4§lKIT §7Voce nao esta dando muito dano , corra!");
+						.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao esta dando muito dano , corra!");
 				/* 121 */ e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 100, -8));
 				/*     */ }
 			/* 123 */ }, 30L);
@@ -135,7 +135,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ {
 			/*     */ public void run()
 			/*     */ {
-				/* 128 */ e.getPlayer().sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce ficou vulneravel, cuidado!");
+				/* 128 */ e.getPlayer().sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce ficou vulneravel, cuidado!");
 				/*     */ }
 			/* 130 */ }, 100L);
 		/* 131 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
@@ -143,7 +143,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ public void run()
 			/*     */ {
 				/* 135 */ e.getPlayer().sendMessage(
-						ChatColor.GREEN + "§4§lKIT §7Voce pode assassinar sem ser pego novamente, Vai em frente!");
+						ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce pode assassinar sem ser pego novamente, Vai em frente!");
 				/* 136 */ Assassin.cooldown.remove(e.getPlayer());
 				/*     */ }
 			/* 138 */ }, 900L);

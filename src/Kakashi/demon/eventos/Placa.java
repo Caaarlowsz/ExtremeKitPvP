@@ -14,14 +14,14 @@ package Kakashi.demon.eventos;
 /*     */ import org.bukkit.inventory.ItemStack;
 
 /*     */
-/*     */ import Kakashi.demon.Main;
+/*     */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*     */
 /*     */ public class Placa/*     */ implements Listener
 /*     */ {
 
 	/*     */
-	/*     */ public Placa(Main instance)
+	/*     */ public Placa(ExtremePvP instance)
 	/*     */ {
 		/*     */ }
 
@@ -31,10 +31,10 @@ package Kakashi.demon.eventos;
 	/*     */ {
 		/* 31 */ if (e.getLine(0).equalsIgnoreCase("sopa"))
 		/*     */ {
-			/* 33 */ e.setLine(0, "§0§l=-=()=-=");
-			/* 34 */ e.setLine(1, "§b§lRokuZ");
-			/* 35 */ e.setLine(2, "§4§l§oSopas!");
-			/* 36 */ e.setLine(3, "§0§l=-=()=-=");
+			/* 33 */ e.setLine(0, "ï¿½0ï¿½l=-=()=-=");
+			/* 34 */ e.setLine(1, "ï¿½bï¿½lRokuZ");
+			/* 35 */ e.setLine(2, "ï¿½4ï¿½lï¿½oSopas!");
+			/* 36 */ e.setLine(3, "ï¿½0ï¿½l=-=()=-=");
 			/*     */ }
 		/*     */ }
 
@@ -46,7 +46,7 @@ package Kakashi.demon.eventos;
 		/*     */
 		/* 45 */ ItemStack sopas = new ItemStack(Material.MUSHROOM_SOUP);
 		/*     */
-		/* 47 */ Inventory inve = Bukkit.getServer().createInventory(p, 36, "§e§oSopas");
+		/* 47 */ Inventory inve = Bukkit.getServer().createInventory(p, 36, "ï¿½eï¿½oSopas");
 		/*     */
 		/* 49 */ inve.setItem(0, sopas);
 		/* 50 */ inve.setItem(1, sopas);
@@ -90,10 +90,10 @@ package Kakashi.demon.eventos;
 		/*     */ {
 			/* 88 */ Sign s = (Sign) e.getClickedBlock().getState();
 			/* 89 */ String[] lines = s.getLines();
-			/* 90 */ if ((lines.length > 0) && (lines[0].equals("§0§l=-=()=-=")) &&
-			/* 91 */ (lines.length > 1) && (lines[1].equals("§b§lRokuZ")) &&
-			/* 92 */ (lines.length > 2) && (lines[2].equals("§4§l§oSopas!")) &&
-			/* 93 */ (lines.length > 3) && (lines[3].equals("§0§l=-=()=-="))) {
+			/* 90 */ if ((lines.length > 0) && (lines[0].equals("ï¿½0ï¿½l=-=()=-=")) &&
+			/* 91 */ (lines.length > 1) && (lines[1].equals("ï¿½bï¿½lRokuZ")) &&
+			/* 92 */ (lines.length > 2) && (lines[2].equals("ï¿½4ï¿½lï¿½oSopas!")) &&
+			/* 93 */ (lines.length > 3) && (lines[3].equals("ï¿½0ï¿½l=-=()=-="))) {
 				/* 94 */ p.openInventory(inve);
 				/*     */ }
 			/*     */ }
@@ -104,16 +104,16 @@ package Kakashi.demon.eventos;
 	/*     */ public void onPlayerColor(SignChangeEvent e)
 	/*     */ {
 		/* 102 */ if (e.getLine(0).contains("&")) {
-			/* 103 */ e.setLine(0, e.getLine(0).replace("&", "§"));
+			/* 103 */ e.setLine(0, e.getLine(0).replace("&", "ï¿½"));
 			/*     */ }
 		/* 105 */ if (e.getLine(1).contains("&")) {
-			/* 106 */ e.setLine(1, e.getLine(1).replace("&", "§"));
+			/* 106 */ e.setLine(1, e.getLine(1).replace("&", "ï¿½"));
 			/*     */ }
 		/* 108 */ if (e.getLine(2).contains("&")) {
-			/* 109 */ e.setLine(2, e.getLine(2).replace("&", "§"));
+			/* 109 */ e.setLine(2, e.getLine(2).replace("&", "ï¿½"));
 			/*     */ }
 		/* 111 */ if (e.getLine(3).contains("&")) {
-			/* 112 */ e.setLine(3, e.getLine(3).replace("&", "§"));
+			/* 112 */ e.setLine(3, e.getLine(3).replace("&", "ï¿½"));
 			/*     */ }
 		/*     */ }
 	/*     */ }

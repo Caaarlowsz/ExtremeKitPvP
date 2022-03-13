@@ -10,15 +10,15 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.entity.Player;
 /*    */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */ public class Check implements CommandExecutor
 /*    */ {
-	/*    */ private Main plugin;
+	/*    */ private ExtremePvP plugin;
 
 	/*    */
-	/*    */ public Check(Main plugin)
+	/*    */ public Check(ExtremePvP plugin)
 	/*    */ {
 		/* 22 */ this.plugin = plugin;
 		/*    */ }
@@ -56,19 +56,19 @@ import Kakashi.demon.Main;
 			/* 50 */ final Player target = p.getServer().getPlayer(args[0]);
 			/* 51 */ if (target != null)
 			/*    */ {
-				/* 53 */ p.sendMessage("§c§lGerando Informaçooes do Player ... Aguarde!");
+				/* 53 */ p.sendMessage("ï¿½cï¿½lGerando Informaï¿½ooes do Player ... Aguarde!");
 				/* 54 */ org.bukkit.Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin,
 						new Runnable() {
 							/*    */ public void run() {
 								/* 56 */ Damageable hp = target;
-								/* 57 */ p.sendMessage("§a§lInformaçõeses do player §6§l§o" + target.getName());
+								/* 57 */ p.sendMessage("ï¿½aï¿½lInformaï¿½ï¿½eses do player ï¿½6ï¿½lï¿½o" + target.getName());
 								/* 58 */ p
-										.sendMessage("§4§lItem selecionado: §e§l§o" + target.getItemInHand().getType());
-								/* 59 */ p.sendMessage("§4§lVida: §e§l§o" + (int) hp.getHealth());
+										.sendMessage("ï¿½4ï¿½lItem selecionado: ï¿½eï¿½lï¿½o" + target.getItemInHand().getType());
+								/* 59 */ p.sendMessage("ï¿½4ï¿½lVida: ï¿½eï¿½lï¿½o" + (int) hp.getHealth());
 								/* 60 */ p.sendMessage(
-										"§4§lSopas: §e§l§o" + Check.getAmount(target, Material.MUSHROOM_SOUP));
-								/* 61 */ p.sendMessage("§4§lGamemode: §e§l§o" + target.getGameMode());
-								/* 62 */ p.sendMessage("§5§lIP : §e§l§o" + target.getAddress().getHostString());
+										"ï¿½4ï¿½lSopas: ï¿½eï¿½lï¿½o" + Check.getAmount(target, Material.MUSHROOM_SOUP));
+								/* 61 */ p.sendMessage("ï¿½4ï¿½lGamemode: ï¿½eï¿½lï¿½o" + target.getGameMode());
+								/* 62 */ p.sendMessage("ï¿½5ï¿½lIP : ï¿½eï¿½lï¿½o" + target.getAddress().getHostString());
 								/*    */ }
 							/* 64 */ },
 						20L);

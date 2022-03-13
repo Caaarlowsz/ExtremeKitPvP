@@ -34,13 +34,13 @@ import org.bukkit.event.player.PlayerPickupItemEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class JoinManager implements Listener
 /*     */ {
-	/*     */ public static Main plugin;
+	/*     */ public static ExtremePvP plugin;
 
 	/*     */
 	/*     */
@@ -67,12 +67,12 @@ import Kakashi.demon.utils.Scoreboard;
 	@EventHandler
 	public void aologin(PlayerJoinEvent e) {
 		Player p = e.getPlayer();
-		p.sendMessage("§a§m-------------------------------------");
-		p.sendMessage("§6Seja Bem-Vindo ao §bKITPVP.");
-		p.sendMessage("§eNosso Objetivo e Fazer Voce se Divertir.");
-		p.sendMessage("§a§m-------------------------------------");
+		p.sendMessage("ï¿½aï¿½m-------------------------------------");
+		p.sendMessage("ï¿½6Seja Bem-Vindo ao ï¿½bKITPVP.");
+		p.sendMessage("ï¿½eNosso Objetivo e Fazer Voce se Divertir.");
+		p.sendMessage("ï¿½aï¿½m-------------------------------------");
 		p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0f, 1.0f);
-		p.setPlayerListName("§7" + p.getName());
+		p.setPlayerListName("ï¿½7" + p.getName());
 
 	}
 
@@ -80,11 +80,11 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void canceltele(PlayerMoveEvent e)
 	/*     */ {
 		/* 85 */ Player p = e.getPlayer();
-		/* 86 */ if ((Main.warping.contains(p)) && ((e.getFrom().getBlockX() != e.getTo().getBlockX())
+		/* 86 */ if ((ExtremePvP.warping.contains(p)) && ((e.getFrom().getBlockX() != e.getTo().getBlockX())
 				|| (e.getFrom().getBlockZ() != e.getTo().getBlockZ())))
 		/*     */ {
-			/* 88 */ Main.warping.remove(p);
-			/* 89 */ p.sendMessage("§4§lWARP §c§lTeleporte Cancelado!");
+			/* 88 */ ExtremePvP.warping.remove(p);
+			/* 89 */ p.sendMessage("ï¿½4ï¿½lWARP ï¿½cï¿½lTeleporte Cancelado!");
 			/*     */ }
 		/*     */ }
 
@@ -309,12 +309,12 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ KitAPI.setKit2(p, "Nenhum");
 		/* 287 */ p.setGameMode(GameMode.SURVIVAL);
 		/* 288 */ p.getInventory().setArmorContents(null);
-		/*     */ KitAPI.setitem(p, Material.CHEST, "§bClasses", 0);
-		/* 305 */ KitAPI.setitem(p, Material.ENDER_CHEST, "§bClasses 2", 1);
-		/* 305 */ KitAPI.setitem(p, Material.PISTON_BASE, "§bMenu", 4);
-		/* 305 */ KitAPI.setitem(p, Material.PAPER, "§bWarps", 7);
+		/*     */ KitAPI.setitem(p, Material.CHEST, "ï¿½bClasses", 0);
+		/* 305 */ KitAPI.setitem(p, Material.ENDER_CHEST, "ï¿½bClasses 2", 1);
+		/* 305 */ KitAPI.setitem(p, Material.PISTON_BASE, "ï¿½bMenu", 4);
+		/* 305 */ KitAPI.setitem(p, Material.PAPER, "ï¿½bWarps", 7);
 		;
-		/* 305 */ KitAPI.setitem(p, Material.BOOK, "§bAjuda", 8);
+		/* 305 */ KitAPI.setitem(p, Material.BOOK, "ï¿½bAjuda", 8);
 		;
 		/*     */ }
 
@@ -333,11 +333,11 @@ import Kakashi.demon.utils.Scoreboard;
 		/* 391 */ if ((p.getKiller() instanceof Player))
 		/*     */ {
 			/* 393 */ Player k = p.getKiller();
-			/* 397 */ p.sendMessage(ChatColor.RED + "§4§lMORTE §7VocÃª Morreu Para: " + ChatColor.DARK_RED
+			/* 397 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lMORTE ï¿½7VocÃª Morreu Para: " + ChatColor.DARK_RED
 					+ ChatColor.ITALIC + k.getName());
 			Dinheiro.removeMoney(p, 50);
 			/* 398 */ k.sendMessage(
-					ChatColor.GREEN + "§4§lKILL §7VocÃª Matou: " + ChatColor.GOLD + ChatColor.ITALIC + p.getName());
+					ChatColor.GREEN + "ï¿½4ï¿½lKILL ï¿½7VocÃª Matou: " + ChatColor.GOLD + ChatColor.ITALIC + p.getName());
 			Dinheiro.addMoney(100, k);
 			Scoreboard.iscoriboard(k);
 			/*     */ }
@@ -348,7 +348,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void join(PlayerJoinEvent event)
 	/*     */ {
 		Player p = event.getPlayer();
-		/* 409 */ event.setJoinMessage("§7(§a+§7) §7" + p.getName());
+		/* 409 */ event.setJoinMessage("ï¿½7(ï¿½a+ï¿½7) ï¿½7" + p.getName());
 		/* 412 */ event.getPlayer().setHealth(20);
 		/*     */ }
 
@@ -357,7 +357,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void quit(PlayerQuitEvent event)
 	/*     */ {
 		Player p = event.getPlayer();
-		/* 420 */ event.setQuitMessage("§7(§c-§7) " + p.getName());
+		/* 420 */ event.setQuitMessage("ï¿½7(ï¿½c-ï¿½7) " + p.getName());
 		/*     */ }
 
 	@EventHandler
@@ -369,7 +369,7 @@ import Kakashi.demon.utils.Scoreboard;
 			public void run() {
 				e.getEntity().spigot().respawn();
 			}
-		}.runTask(Main.getPlugin());
+		}.runTask(ExtremePvP.getPlugin());
 	}
 
 	/*     */ @EventHandler
@@ -416,7 +416,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/* 456 */ if ((this.timeout.containsKey(p.getName())) &&
 		/* 457 */ (((Long) this.timeout.get(p.getName())).longValue() > System.currentTimeMillis()))
 		/*     */ {
-			/* 459 */ p.sendMessage("§4§lAVISO §cNÃ£o faÃ§a spam!");
+			/* 459 */ p.sendMessage("ï¿½4ï¿½lAVISO ï¿½cNÃ£o faÃ§a spam!");
 			/* 460 */ e.setCancelled(true);
 			/* 461 */ return;
 			/*     */ }
@@ -562,7 +562,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ @EventHandler
 	/*     */ public void msgMOTD(ServerListPingEvent ev)
 	/*     */ {
-		/* 625 */ ev.setMotd("      §bKITPVP §bž¼ §aServidor de KitPvP\n           §eRemovemos Todo o §6§lLAG");
+		/* 625 */ ev.setMotd("      ï¿½bKITPVP ï¿½bï¿½ï¿½ ï¿½aServidor de KitPvP\n           ï¿½eRemovemos Todo o ï¿½6ï¿½lLAG");
 		/*     */ }
 	/*     */
 }

@@ -15,20 +15,20 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.Dinheiro;
 
 public class LojaKits implements Listener, CommandExecutor {
 	@SuppressWarnings("unused")
-	private Main plugin;
+	private ExtremePvP plugin;
 
-	public LojaKits(Main instance) {
+	public LojaKits(ExtremePvP instance) {
 		this.plugin = instance;
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("§7[§cErro§7] §cApenas jogadores podem executar esse comando");
+			sender.sendMessage("ï¿½7[ï¿½cErroï¿½7] ï¿½cApenas jogadores podem executar esse comando");
 			return true;
 		}
 
@@ -36,79 +36,79 @@ public class LojaKits implements Listener, CommandExecutor {
 
 		ItemStack Sword = new ItemStack(Material.DIAMOND_SWORD);
 		ItemMeta Swordmeta = Sword.getItemMeta();
-		Swordmeta.setDisplayName(ChatColor.GREEN + " §fEspada de Diamante §a$200");
+		Swordmeta.setDisplayName(ChatColor.GREEN + " ï¿½fEspada de Diamante ï¿½a$200");
 		Sword.setItemMeta(Swordmeta);
 
 		ItemStack Sharp4 = new ItemStack(Material.DIAMOND_SWORD);
 		Sharp4.addEnchantment(Enchantment.DAMAGE_ALL, 4);
 		ItemMeta Sharp4meta = Sharp4.getItemMeta();
-		Sharp4meta.setDisplayName(ChatColor.GREEN + " §fEspada Sharpness 4 §a$6000");
+		Sharp4meta.setDisplayName(ChatColor.GREEN + " ï¿½fEspada Sharpness 4 ï¿½a$6000");
 		Sharp4.setItemMeta(Sharp4meta);
 
 		ItemStack Sharp5 = new ItemStack(Material.DIAMOND_SWORD);
 		Sharp5.addEnchantment(Enchantment.DAMAGE_ALL, 5);
 		ItemMeta Sharp5meta = Sharp5.getItemMeta();
-		Sharp5meta.setDisplayName(ChatColor.GREEN + " §fEspada Sharpness 5 §a$8000");
+		Sharp5meta.setDisplayName(ChatColor.GREEN + " ï¿½fEspada Sharpness 5 ï¿½a$8000");
 		Sharp5.setItemMeta(Sharp5meta);
 
 		ItemStack EXP = new ItemStack(Material.EXP_BOTTLE);
 		ItemMeta EXPmeta = EXP.getItemMeta();
-		EXPmeta.setDisplayName(ChatColor.GREEN + " §fEXP §a$5200");
+		EXPmeta.setDisplayName(ChatColor.GREEN + " ï¿½fEXP ï¿½a$5200");
 		EXP.setItemMeta(EXPmeta);
 
 		ItemStack Arco = new ItemStack(Material.BOW);
 		ItemMeta Arcometa = Arco.getItemMeta();
-		Arcometa.setDisplayName(ChatColor.GREEN + " §fArco e Flecha §a$250");
+		Arcometa.setDisplayName(ChatColor.GREEN + " ï¿½fArco e Flecha ï¿½a$250");
 		Arco.setItemMeta(Arcometa);
 
-		ItemStack ArcoForça = new ItemStack(Material.BOW);
-		ArcoForça.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
-		ItemMeta ArcoForçameta = ArcoForça.getItemMeta();
-		ArcoForçameta.setDisplayName(ChatColor.GREEN + " §fArco Força 5 §a$7000");
-		ArcoForça.setItemMeta(ArcoForçameta);
+		ItemStack ArcoForï¿½a = new ItemStack(Material.BOW);
+		ArcoForï¿½a.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
+		ItemMeta ArcoForï¿½ameta = ArcoForï¿½a.getItemMeta();
+		ArcoForï¿½ameta.setDisplayName(ChatColor.GREEN + " ï¿½fArco Forï¿½a 5 ï¿½a$7000");
+		ArcoForï¿½a.setItemMeta(ArcoForï¿½ameta);
 
 		ItemStack ArcoImpacto = new ItemStack(Material.BOW);
 		ArcoImpacto.addEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
 		ItemMeta ArcoImpactometa = ArcoImpacto.getItemMeta();
-		ArcoImpactometa.setDisplayName(ChatColor.GREEN + " §fArco Impacto 2 §a$4000");
+		ArcoImpactometa.setDisplayName(ChatColor.GREEN + " ï¿½fArco Impacto 2 ï¿½a$4000");
 		ArcoImpacto.setItemMeta(ArcoImpactometa);
 
 		ItemStack warps = new ItemStack(Material.ARROW);
 		ItemMeta Flechasmeta = warps.getItemMeta();
-		Flechasmeta.setDisplayName(ChatColor.GREEN + "warps §a$150");
+		Flechasmeta.setDisplayName(ChatColor.GREEN + "warps ï¿½a$150");
 		warps.setItemMeta(Flechasmeta);
 
-		ItemStack poção = new ItemStack(Material.POTION);
-		poção.setDurability((short) 8265);
-		ItemMeta poçãometa = poção.getItemMeta();
-		poçãometa.setDisplayName(ChatColor.GREEN + " §fPoção de Força §a$9500");
-		poção.setItemMeta(poçãometa);
+		ItemStack poï¿½ï¿½o = new ItemStack(Material.POTION);
+		poï¿½ï¿½o.setDurability((short) 8265);
+		ItemMeta poï¿½ï¿½ometa = poï¿½ï¿½o.getItemMeta();
+		poï¿½ï¿½ometa.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Forï¿½a ï¿½a$9500");
+		poï¿½ï¿½o.setItemMeta(poï¿½ï¿½ometa);
 
-		ItemStack poção2 = new ItemStack(Material.POTION);
-		poção2.setDurability((short) 16457);
-		ItemMeta poção2meta = poção2.getItemMeta();
-		poção2meta.setDisplayName(ChatColor.GREEN + " §fDuas Poções de Força §a$9000");
-		poção2.setItemMeta(poção2meta);
+		ItemStack poï¿½ï¿½o2 = new ItemStack(Material.POTION);
+		poï¿½ï¿½o2.setDurability((short) 16457);
+		ItemMeta poï¿½ï¿½o2meta = poï¿½ï¿½o2.getItemMeta();
+		poï¿½ï¿½o2meta.setDisplayName(ChatColor.GREEN + " ï¿½fDuas Poï¿½ï¿½es de Forï¿½a ï¿½a$9000");
+		poï¿½ï¿½o2.setItemMeta(poï¿½ï¿½o2meta);
 
-		ItemStack poção3 = new ItemStack(Material.POTION);
-		poção3.setDurability((short) 16428);
-		ItemMeta poção3meta = poção3.getItemMeta();
-		poção3meta.setDisplayName(ChatColor.GREEN + " §fPoção de Dano §a$2000");
-		poção3.setItemMeta(poção3meta);
+		ItemStack poï¿½ï¿½o3 = new ItemStack(Material.POTION);
+		poï¿½ï¿½o3.setDurability((short) 16428);
+		ItemMeta poï¿½ï¿½o3meta = poï¿½ï¿½o3.getItemMeta();
+		poï¿½ï¿½o3meta.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Dano ï¿½a$2000");
+		poï¿½ï¿½o3.setItemMeta(poï¿½ï¿½o3meta);
 
-		ItemStack poção4 = new ItemStack(Material.POTION);
-		poção4.setDurability((short) 16418);
-		ItemMeta poção4meta = poção4.getItemMeta();
-		poção4meta.setDisplayName(ChatColor.GREEN + " §fPoção de Velocidade II §a$3000");
-		poção4.setItemMeta(poção4meta);
+		ItemStack poï¿½ï¿½o4 = new ItemStack(Material.POTION);
+		poï¿½ï¿½o4.setDurability((short) 16418);
+		ItemMeta poï¿½ï¿½o4meta = poï¿½ï¿½o4.getItemMeta();
+		poï¿½ï¿½o4meta.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Velocidade II ï¿½a$3000");
+		poï¿½ï¿½o4.setItemMeta(poï¿½ï¿½o4meta);
 
-		ItemStack poção5 = new ItemStack(Material.POTION);
-		poção5.setDurability((short) 16388);
-		ItemMeta poção5meta = poção5.getItemMeta();
-		poção5meta.setDisplayName(ChatColor.GREEN + " §fPoção de Veneno §a$1000");
-		poção5.setItemMeta(poção5meta);
+		ItemStack poï¿½ï¿½o5 = new ItemStack(Material.POTION);
+		poï¿½ï¿½o5.setDurability((short) 16388);
+		ItemMeta poï¿½ï¿½o5meta = poï¿½ï¿½o5.getItemMeta();
+		poï¿½ï¿½o5meta.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Veneno ï¿½a$1000");
+		poï¿½ï¿½o5.setItemMeta(poï¿½ï¿½o5meta);
 		Player p = (Player) sender;
-		Inventory shop = Bukkit.getServer().createInventory(p, 18, ChatColor.GOLD + " §fShop");
+		Inventory shop = Bukkit.getServer().createInventory(p, 18, ChatColor.GOLD + " ï¿½fShop");
 
 		shop.setItem(0, iron);
 		shop.setItem(1, iron);
@@ -116,16 +116,16 @@ public class LojaKits implements Listener, CommandExecutor {
 		shop.setItem(3, Sharp4);
 		shop.setItem(4, Sword);
 		shop.setItem(5, Sharp5);
-		shop.setItem(6, ArcoForça);
+		shop.setItem(6, ArcoForï¿½a);
 		shop.setItem(7, iron);
 		shop.setItem(8, iron);
 		shop.setItem(9, iron);
 		shop.setItem(10, Arco);
-		shop.setItem(11, poção3);
-		shop.setItem(12, poção);
-		shop.setItem(13, poção2);
-		shop.setItem(14, poção4);
-		shop.setItem(15, poção5);
+		shop.setItem(11, poï¿½ï¿½o3);
+		shop.setItem(12, poï¿½ï¿½o);
+		shop.setItem(13, poï¿½ï¿½o2);
+		shop.setItem(14, poï¿½ï¿½o4);
+		shop.setItem(15, poï¿½ï¿½o5);
 		shop.setItem(16, EXP);
 		shop.setItem(17, iron);
 		p.openInventory(shop);
@@ -135,7 +135,7 @@ public class LojaKits implements Listener, CommandExecutor {
 
 	@EventHandler
 	public void inventoryclick(InventoryClickEvent e) {
-		if ((e.getInventory().getName().equalsIgnoreCase(ChatColor.GOLD + " §fShop")) && (e.getRawSlot() < 18)
+		if ((e.getInventory().getName().equalsIgnoreCase(ChatColor.GOLD + " ï¿½fShop")) && (e.getRawSlot() < 18)
 				&& (e.getRawSlot() > -1)) {
 			ItemStack itemclicked = e.getCurrentItem();
 			ItemStack cursor = e.getCursor();
@@ -145,84 +145,84 @@ public class LojaKits implements Listener, CommandExecutor {
 
 				ItemStack Sword = new ItemStack(Material.DIAMOND_SWORD);
 				ItemMeta Swordmeta = Sword.getItemMeta();
-				Swordmeta.setDisplayName(ChatColor.GREEN + " §fEspada de Diamante §a$200");
+				Swordmeta.setDisplayName(ChatColor.GREEN + " ï¿½fEspada de Diamante ï¿½a$200");
 				Sword.setItemMeta(Swordmeta);
 
 				ItemStack Sharp4 = new ItemStack(Material.DIAMOND_SWORD);
 				Sharp4.addEnchantment(Enchantment.DAMAGE_ALL, 4);
 				ItemMeta Sharp4meta = Sharp4.getItemMeta();
-				Sharp4meta.setDisplayName(ChatColor.GREEN + " §fEspada Sharpness 4 §a$6000");
+				Sharp4meta.setDisplayName(ChatColor.GREEN + " ï¿½fEspada Sharpness 4 ï¿½a$6000");
 				Sharp4.setItemMeta(Sharp4meta);
 
 				ItemStack Sharp5 = new ItemStack(Material.DIAMOND_SWORD);
 				Sharp5.addEnchantment(Enchantment.DAMAGE_ALL, 5);
 				ItemMeta Sharp5meta = Sharp5.getItemMeta();
-				Sharp5meta.setDisplayName(ChatColor.GREEN + " §fEspada Sharpness 5 §a$8000");
+				Sharp5meta.setDisplayName(ChatColor.GREEN + " ï¿½fEspada Sharpness 5 ï¿½a$8000");
 				Sharp5.setItemMeta(Sharp5meta);
 
 				ItemStack EXP = new ItemStack(Material.EXP_BOTTLE);
 				ItemMeta EXPmeta = EXP.getItemMeta();
-				EXPmeta.setDisplayName(ChatColor.GREEN + " §fEXP §a$5200");
+				EXPmeta.setDisplayName(ChatColor.GREEN + " ï¿½fEXP ï¿½a$5200");
 				EXP.setItemMeta(EXPmeta);
 
 				ItemStack Arco = new ItemStack(Material.BOW);
 				ItemMeta Arcometa = Arco.getItemMeta();
-				Arcometa.setDisplayName(ChatColor.GREEN + " §fArco e Flecha §a$250");
+				Arcometa.setDisplayName(ChatColor.GREEN + " ï¿½fArco e Flecha ï¿½a$250");
 				Arco.setItemMeta(Arcometa);
 
-				ItemStack ArcoForça = new ItemStack(Material.BOW);
-				ArcoForça.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
-				ItemMeta ArcoForçameta = ArcoForça.getItemMeta();
-				ArcoForçameta.setDisplayName(ChatColor.GREEN + " §fArco Força 5 §a$7000");
-				ArcoForça.setItemMeta(ArcoForçameta);
+				ItemStack ArcoForï¿½a = new ItemStack(Material.BOW);
+				ArcoForï¿½a.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
+				ItemMeta ArcoForï¿½ameta = ArcoForï¿½a.getItemMeta();
+				ArcoForï¿½ameta.setDisplayName(ChatColor.GREEN + " ï¿½fArco Forï¿½a 5 ï¿½a$7000");
+				ArcoForï¿½a.setItemMeta(ArcoForï¿½ameta);
 
 				ItemStack ArcoImpacto = new ItemStack(Material.BOW);
 				ArcoImpacto.addEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
 				ItemMeta ArcoImpactometa = ArcoImpacto.getItemMeta();
-				ArcoImpactometa.setDisplayName(ChatColor.GREEN + " §fArco Impacto 2 §a$4000");
+				ArcoImpactometa.setDisplayName(ChatColor.GREEN + " ï¿½fArco Impacto 2 ï¿½a$4000");
 				ArcoImpacto.setItemMeta(ArcoImpactometa);
 
 				ItemStack warps = new ItemStack(Material.ARROW);
 				ItemMeta Flechasmeta = warps.getItemMeta();
-				Flechasmeta.setDisplayName(ChatColor.GREEN + "warps §a$150");
+				Flechasmeta.setDisplayName(ChatColor.GREEN + "warps ï¿½a$150");
 				warps.setItemMeta(Flechasmeta);
 
-				ItemStack poção = new ItemStack(Material.POTION);
-				poção.setDurability((short) 8265);
-				ItemMeta poçãometa = poção.getItemMeta();
-				poçãometa.setDisplayName(ChatColor.GREEN + " §fPoção de Força §a$9500");
-				poção.setItemMeta(poçãometa);
+				ItemStack poï¿½ï¿½o = new ItemStack(Material.POTION);
+				poï¿½ï¿½o.setDurability((short) 8265);
+				ItemMeta poï¿½ï¿½ometa = poï¿½ï¿½o.getItemMeta();
+				poï¿½ï¿½ometa.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Forï¿½a ï¿½a$9500");
+				poï¿½ï¿½o.setItemMeta(poï¿½ï¿½ometa);
 
-				ItemStack poção2 = new ItemStack(Material.POTION);
-				poção2.setDurability((short) 16457);
-				ItemMeta poção2meta = poção2.getItemMeta();
-				poção2meta.setDisplayName(ChatColor.GREEN + " §fDuas Poções de Força §a$9000");
-				poção2.setItemMeta(poção2meta);
+				ItemStack poï¿½ï¿½o2 = new ItemStack(Material.POTION);
+				poï¿½ï¿½o2.setDurability((short) 16457);
+				ItemMeta poï¿½ï¿½o2meta = poï¿½ï¿½o2.getItemMeta();
+				poï¿½ï¿½o2meta.setDisplayName(ChatColor.GREEN + " ï¿½fDuas Poï¿½ï¿½es de Forï¿½a ï¿½a$9000");
+				poï¿½ï¿½o2.setItemMeta(poï¿½ï¿½o2meta);
 
-				ItemStack poção3 = new ItemStack(Material.POTION);
-				poção3.setDurability((short) 16428);
-				ItemMeta poção3meta = poção3.getItemMeta();
-				poção3meta.setDisplayName(ChatColor.GREEN + " §fPoção de Dano §a$2000");
-				poção3.setItemMeta(poção3meta);
+				ItemStack poï¿½ï¿½o3 = new ItemStack(Material.POTION);
+				poï¿½ï¿½o3.setDurability((short) 16428);
+				ItemMeta poï¿½ï¿½o3meta = poï¿½ï¿½o3.getItemMeta();
+				poï¿½ï¿½o3meta.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Dano ï¿½a$2000");
+				poï¿½ï¿½o3.setItemMeta(poï¿½ï¿½o3meta);
 
-				ItemStack poção4 = new ItemStack(Material.POTION);
-				poção4.setDurability((short) 16418);
-				ItemMeta poção4meta = poção4.getItemMeta();
-				poção4meta.setDisplayName(ChatColor.GREEN + " §fPoção de Velocidade II §a$3000");
-				poção4.setItemMeta(poção4meta);
+				ItemStack poï¿½ï¿½o4 = new ItemStack(Material.POTION);
+				poï¿½ï¿½o4.setDurability((short) 16418);
+				ItemMeta poï¿½ï¿½o4meta = poï¿½ï¿½o4.getItemMeta();
+				poï¿½ï¿½o4meta.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Velocidade II ï¿½a$3000");
+				poï¿½ï¿½o4.setItemMeta(poï¿½ï¿½o4meta);
 
-				ItemStack poção5 = new ItemStack(Material.POTION);
-				poção5.setDurability((short) 16388);
-				ItemMeta poção5meta = poção5.getItemMeta();
-				poção5meta.setDisplayName(ChatColor.GREEN + " §fPoção de Veneno §a$1000");
-				poção5.setItemMeta(poção5meta);
+				ItemStack poï¿½ï¿½o5 = new ItemStack(Material.POTION);
+				poï¿½ï¿½o5.setDurability((short) 16388);
+				ItemMeta poï¿½ï¿½o5meta = poï¿½ï¿½o5.getItemMeta();
+				poï¿½ï¿½o5meta.setDisplayName(ChatColor.GREEN + " ï¿½fPoï¿½ï¿½o de Veneno ï¿½a$1000");
+				poï¿½ï¿½o5.setItemMeta(poï¿½ï¿½o5meta);
 				if (itemclicked.equals(Sword)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
 
 						ItemStack Diamond = new ItemStack(Material.DIAMOND_SWORD);
 						p.getInventory().addItem(new ItemStack[] { Diamond });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou uma espada de diamante!");
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou uma espada de diamante!");
 						p.closeInventory();
 						return;
 					}
@@ -235,7 +235,7 @@ public class LojaKits implements Listener, CommandExecutor {
 
 						ItemStack Diamond = new ItemStack(Material.DIAMOND_SWORD);
 						p.getInventory().addItem(new ItemStack[] { Diamond });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou uma espada de diamante!");
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou uma espada de diamante!");
 						p.closeInventory();
 						return;
 					}
@@ -248,7 +248,7 @@ public class LojaKits implements Listener, CommandExecutor {
 						ItemStack Diamond = new ItemStack(Material.DIAMOND_SWORD);
 						Diamond.addEnchantment(Enchantment.DAMAGE_ALL, 4);
 						p.getInventory().addItem(new ItemStack[] { Diamond });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou Força 4 para sua espada!");
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou Forï¿½a 4 para sua espada!");
 						p.closeInventory();
 						return;
 					}
@@ -263,7 +263,7 @@ public class LojaKits implements Listener, CommandExecutor {
 						ItemStack Diamond = new ItemStack(Material.DIAMOND_SWORD);
 						Diamond.addEnchantment(Enchantment.DAMAGE_ALL, 5);
 						p.getInventory().addItem(new ItemStack[] { Diamond });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou Força 5 para sua espada!");
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou Forï¿½a 5 para sua espada!");
 						p.closeInventory();
 						return;
 					}
@@ -279,7 +279,7 @@ public class LojaKits implements Listener, CommandExecutor {
 							ItemStack Diamond = new ItemStack(Material.EXP_BOTTLE);
 							p.getInventory().addItem(new ItemStack[] { Diamond });
 						}
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou um pack de Exp!");
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou um pack de Exp!");
 						p.closeInventory();
 						return;
 					}
@@ -294,7 +294,7 @@ public class LojaKits implements Listener, CommandExecutor {
 						ItemStack Diamond = new ItemStack(Material.BOW);
 						p.getInventory().addItem(new ItemStack[] { Diamond });
 						p.getInventory().addItem(new ItemStack[] { new ItemStack(262, 64) });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou um arco e flecha!");
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou um arco e flecha!");
 						p.closeInventory();
 						return;
 					}
@@ -302,40 +302,40 @@ public class LojaKits implements Listener, CommandExecutor {
 					return;
 
 				}
-				if (itemclicked.equals(poção3)) {
+				if (itemclicked.equals(poï¿½ï¿½o3)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
 
-						ItemStack poçãoa3 = new ItemStack(Material.POTION);
-						poçãoa3.setDurability((short) 16428);
-						p.getInventory().addItem(new ItemStack[] { poçãoa3 });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou uma Poção de dano!");
+						ItemStack poï¿½ï¿½oa3 = new ItemStack(Material.POTION);
+						poï¿½ï¿½oa3.setDurability((short) 16428);
+						p.getInventory().addItem(new ItemStack[] { poï¿½ï¿½oa3 });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou uma Poï¿½ï¿½o de dano!");
 						p.closeInventory();
 						return;
 					}
 					DinheiroErro(p);
 					return;
 				}
-				if (itemclicked.equals(poção4)) {
+				if (itemclicked.equals(poï¿½ï¿½o4)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
-						ItemStack poção4a = new ItemStack(Material.POTION);
-						poção4a.setDurability((short) 16418);
-						p.getInventory().addItem(new ItemStack[] { poção4a });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou uma Poção de velocidade II!");
+						ItemStack poï¿½ï¿½o4a = new ItemStack(Material.POTION);
+						poï¿½ï¿½o4a.setDurability((short) 16418);
+						p.getInventory().addItem(new ItemStack[] { poï¿½ï¿½o4a });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou uma Poï¿½ï¿½o de velocidade II!");
 						p.closeInventory();
 						return;
 					}
 					DinheiroErro(p);
 					return;
 				}
-				if (itemclicked.equals(poção5)) {
+				if (itemclicked.equals(poï¿½ï¿½o5)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
-						ItemStack poção5a = new ItemStack(Material.POTION);
-						poção5a.setDurability((short) 16388);
-						p.getInventory().addItem(new ItemStack[] { poção5a });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou uma Poção de Veneno!");
+						ItemStack poï¿½ï¿½o5a = new ItemStack(Material.POTION);
+						poï¿½ï¿½o5a.setDurability((short) 16388);
+						p.getInventory().addItem(new ItemStack[] { poï¿½ï¿½o5a });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou uma Poï¿½ï¿½o de Veneno!");
 						p.closeInventory();
 						return;
 					}
@@ -343,14 +343,14 @@ public class LojaKits implements Listener, CommandExecutor {
 					return;
 
 				}
-				if (itemclicked.equals(ArcoForça)) {
+				if (itemclicked.equals(ArcoForï¿½a)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
 
-						ItemStack ArcoForçaa = new ItemStack(Material.BOW);
-						ArcoForçaa.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
-						p.getInventory().addItem(new ItemStack[] { ArcoForçaa });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou Força 5 para seu arco!");
+						ItemStack ArcoForï¿½aa = new ItemStack(Material.BOW);
+						ArcoForï¿½aa.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
+						p.getInventory().addItem(new ItemStack[] { ArcoForï¿½aa });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou Forï¿½a 5 para seu arco!");
 						p.closeInventory();
 						return;
 					}
@@ -364,10 +364,10 @@ public class LojaKits implements Listener, CommandExecutor {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
 
-						ItemStack ArcoForçaaa = new ItemStack(Material.BOW);
-						ArcoForçaaa.addEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
-						p.getInventory().addItem(new ItemStack[] { ArcoForçaaa });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou Impacto 2 para seu arco!");
+						ItemStack ArcoForï¿½aaa = new ItemStack(Material.BOW);
+						ArcoForï¿½aaa.addEnchantment(Enchantment.ARROW_KNOCKBACK, 2);
+						p.getInventory().addItem(new ItemStack[] { ArcoForï¿½aaa });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou Impacto 2 para seu arco!");
 						p.closeInventory();
 						return;
 					}
@@ -375,13 +375,13 @@ public class LojaKits implements Listener, CommandExecutor {
 					return;
 				}
 
-				if (itemclicked.equals(poção)) {
+				if (itemclicked.equals(poï¿½ï¿½o)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
-						ItemStack poçãoa = new ItemStack(Material.POTION);
-						poçãoa.setDurability((short) 8265);
-						p.getInventory().addItem(new ItemStack[] { poçãoa });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou uma poção de Força!");
+						ItemStack poï¿½ï¿½oa = new ItemStack(Material.POTION);
+						poï¿½ï¿½oa.setDurability((short) 8265);
+						p.getInventory().addItem(new ItemStack[] { poï¿½ï¿½oa });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou uma poï¿½ï¿½o de Forï¿½a!");
 						p.closeInventory();
 						return;
 					}
@@ -389,7 +389,7 @@ public class LojaKits implements Listener, CommandExecutor {
 					return;
 				}
 
-				if (itemclicked.equals(poção2)) {
+				if (itemclicked.equals(poï¿½ï¿½o2)) {
 					if (Dinheiro.getMoney(p) >= 2000) {
 						Dinheiro.removeMoney(p, 2000);
 					} else
@@ -397,11 +397,11 @@ public class LojaKits implements Listener, CommandExecutor {
 					DinheiroErro(p);
 					{
 
-						ItemStack poçãoaa = new ItemStack(Material.POTION);
-						poçãoaa.setDurability((short) 16457);
-						p.getInventory().addItem(new ItemStack[] { poçãoaa });
-						p.getInventory().addItem(new ItemStack[] { poçãoaa });
-						p.sendMessage(ChatColor.GREEN + " §aVocê  comprou duas poção de Força!");
+						ItemStack poï¿½ï¿½oaa = new ItemStack(Material.POTION);
+						poï¿½ï¿½oaa.setDurability((short) 16457);
+						p.getInventory().addItem(new ItemStack[] { poï¿½ï¿½oaa });
+						p.getInventory().addItem(new ItemStack[] { poï¿½ï¿½oaa });
+						p.sendMessage(ChatColor.GREEN + " ï¿½aVocï¿½  comprou duas poï¿½ï¿½o de Forï¿½a!");
 						p.closeInventory();
 						return;
 					}
@@ -411,7 +411,7 @@ public class LojaKits implements Listener, CommandExecutor {
 	}
 
 	public void DinheiroErro(Player p) {
-		p.sendMessage("§7[§6§lXP§7] §c XP Insuficiente");
+		p.sendMessage("ï¿½7[ï¿½6ï¿½lXPï¿½7] ï¿½c XP Insuficiente");
 		p.closeInventory();
 	}
 

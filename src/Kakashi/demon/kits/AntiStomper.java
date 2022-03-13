@@ -14,17 +14,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.entity.PlayerDeathEvent;
 /*     */ import org.bukkit.event.player.PlayerJoinEvent;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class AntiStomper/*     */ implements CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public AntiStomper(Main plugin)
+	/*     */ public AntiStomper(ExtremePvP plugin)
 	/*     */ {
 		/* 33 */ this.plugin = plugin;
 		/*     */ }
@@ -60,7 +60,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit2(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 63 */ jogador.sendMessage("§4§lKIT §7 §c§l§oVoce ja selecionou um kit !");
+					/* 63 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½7 ï¿½cï¿½lï¿½oVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -79,7 +79,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 81 */ p.sendMessage(
-				ChatColor.GREEN + "§4§lKIT §7Voce escolheu Antistomper2! Pegue Outro Kit Para ir à Arena!");
+				ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu Antistomper2! Pegue Outro Kit Para ir ï¿½ Arena!");
 		KitAPI.setKit2(p, "AntiStomper");
 		Scoreboard.iscoriboard(p);
 		/* 88 */ antistomper.add(p.getName());

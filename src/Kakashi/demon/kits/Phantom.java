@@ -19,7 +19,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerJoinEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -27,10 +27,10 @@ import Kakashi.demon.utils.Scoreboard;
 /*     */
 /*     */ public class Phantom/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Phantom(Main plugin)
+	/*     */ public Phantom(ExtremePvP plugin)
 	/*     */ {
 		/* 32 */ this.plugin = plugin;
 		/*     */ }
@@ -66,7 +66,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 61 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 61 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -75,7 +75,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 70 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 70 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 73 */ return false;
@@ -85,7 +85,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void giveKit(Player p)
 	/*     */ {
 		/* 78 */ p.getInventory().clear();
-		/* 79 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cPhantom!");
+		/* 79 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cPhantom!");
 		KitAPI.setKit(p, "Phantom");
 		Scoreboard.iscoriboard(p);
 		/* 80 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -107,40 +107,40 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ }
 		/* 99 */ if (cooldown.contains(e.getPlayer()))
 		/*     */ {
-			/* 101 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §7You can't fly yet!");
+			/* 101 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7You can't fly yet!");
 			/* 102 */ return;
 			/*     */ }
 		/* 104 */ if ((e.getAction() == Action.RIGHT_CLICK_AIR) || (e.getAction() == Action.RIGHT_CLICK_BLOCK))
 		/*     */ {
 			/* 106 */ cooldown.add(e.getPlayer());
 			/* 107 */ e.getPlayer().setAllowFlight(true);
-			/* 108 */ e.getPlayer().sendMessage(ChatColor.GREEN + "§4§lKIT §7Pode voar por 5 segundos!");
+			/* 108 */ e.getPlayer().sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Pode voar por 5 segundos!");
 			/* 109 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 			/*     */ {
 				/*     */ public void run()
 				/*     */ {
-					/* 113 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §74 segundos restantes!");
+					/* 113 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½74 segundos restantes!");
 					/*     */ }
 				/* 115 */ }, 20L);
 			/* 116 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 			/*     */ {
 				/*     */ public void run()
 				/*     */ {
-					/* 120 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §73 segundos restantes!");
+					/* 120 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½73 segundos restantes!");
 					/*     */ }
 				/* 122 */ }, 40L);
 			/* 123 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 			/*     */ {
 				/*     */ public void run()
 				/*     */ {
-					/* 127 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §72 segundos restantes!");
+					/* 127 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½72 segundos restantes!");
 					/*     */ }
 				/* 129 */ }, 60L);
 			/* 130 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 			/*     */ {
 				/*     */ public void run()
 				/*     */ {
-					/* 134 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §71 segundos restantes!");
+					/* 134 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½71 segundos restantes!");
 					/*     */ }
 				/* 136 */ }, 80L);
 			/* 137 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
@@ -148,7 +148,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ public void run()
 				/*     */ {
 					/* 141 */ e.getPlayer().setAllowFlight(false);
-					/* 142 */ e.getPlayer().sendMessage(ChatColor.RED + "§4§lKIT §7Voo terminou!");
+					/* 142 */ e.getPlayer().sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voo terminou!");
 					/* 143 */ e.getPlayer().setFallDistance(0.0F);
 					/*     */ }
 				/* 145 */ }, 100L);
@@ -156,7 +156,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/*     */ public void run()
 				/*     */ {
-					/* 150 */ e.getPlayer().sendMessage(ChatColor.GREEN + "§4§lKIT §7Pode voar novamente!");
+					/* 150 */ e.getPlayer().sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Pode voar novamente!");
 					/* 151 */ Phantom.cooldown.remove(e.getPlayer());
 					/*     */ }
 				/* 153 */ }, 600L);

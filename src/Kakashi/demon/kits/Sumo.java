@@ -24,20 +24,20 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.plugin.Plugin;
 /*     */ import org.bukkit.util.Vector;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Sumo implements Listener, CommandExecutor
 /*     */ {
-	/* 32 */ public static int maça = Material.APPLE.getId();
+	/* 32 */ public static int maï¿½a = Material.APPLE.getId();
 	/* 33 */ public static ArrayList<Player> sumo = new ArrayList<>();
 	/*     */
 	/*     */ public Plugin plugin;
 
 	/*     */
-	/*     */ public Sumo(Main plugin)
+	/*     */ public Sumo(ExtremePvP plugin)
 	/*     */ {
 		/* 39 */ this.plugin = plugin;
 		/*     */ }
@@ -56,7 +56,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 54 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 54 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -65,7 +65,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 63 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 63 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 66 */ return false;
@@ -75,7 +75,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void giveKit(Player p)
 	/*     */ {
 		/* 71 */ p.getInventory().clear();
-		/* 72 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cSumo!");
+		/* 72 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cSumo!");
 		KitAPI.setKit(p, "Sumo");
 		Scoreboard.iscoriboard(p);
 		/* 73 */ sumo.add(p);
@@ -116,13 +116,13 @@ import Kakashi.demon.utils.Scoreboard;
 		/* 108 */ if ((p instanceof Player))
 		/*     */ {
 			/* 110 */ if (sumo.contains(p)) {
-				/* 111 */ if (p.getItemInHand().getTypeId() == maça) {
+				/* 111 */ if (p.getItemInHand().getTypeId() == maï¿½a) {
 					/* 112 */ return;
 					/*     */ }
 				/* 114 */ if (!e.getAction().name().contains("RIGHT")) {
 					/* 115 */ return;
 					/*     */ }
-				/* 117 */ if (p.getItemInHand().getTypeId() != maça) {
+				/* 117 */ if (p.getItemInHand().getTypeId() != maï¿½a) {
 					/* 118 */ return;
 					/*     */ }
 				/* 120 */ e.setCancelled(true);
@@ -151,7 +151,7 @@ import Kakashi.demon.utils.Scoreboard;
 					/*     */ }
 				/*     */ else
 				/*     */ {
-					/* 146 */ p.sendMessage("§4§lKIT §cAguarde mais um pouco para usar sua habilidade !");
+					/* 146 */ p.sendMessage("ï¿½4ï¿½lKIT ï¿½cAguarde mais um pouco para usar sua habilidade !");
 					/*     */ }
 				/*     */ }
 			/*     */ }

@@ -19,17 +19,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerJoinEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Launcher implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Launcher(Main plugin)
+	/*     */ public Launcher(ExtremePvP plugin)
 	/*     */ {
 		/* 32 */ this.plugin = plugin;
 		/*     */ }
@@ -63,7 +63,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 59 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 59 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -82,7 +82,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 76 */ p.getInventory().clear();
-		/* 77 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cLauncher!");
+		/* 77 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cLauncher!");
 		Scoreboard.iscoriboard(p);
 		KitAPI.setKit(p, "Launcher");
 		/* 78 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);

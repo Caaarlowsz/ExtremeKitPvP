@@ -14,7 +14,7 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.command.CommandSender;
 /*    */ import org.bukkit.entity.Player;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */
@@ -23,10 +23,10 @@ import Kakashi.demon.Main;
 /*    */ {
 	/* 22 */ public static ArrayList<String> reported = new ArrayList<>();
 	/*    */
-	/*    */ private Main plugin;
+	/*    */ private ExtremePvP plugin;
 
 	/*    */
-	/*    */ public Report(Main plugin)
+	/*    */ public Report(ExtremePvP plugin)
 	/*    */ {
 		/* 28 */ this.plugin = plugin;
 		/*    */ }
@@ -38,7 +38,7 @@ import Kakashi.demon.Main;
 		/* 34 */ final Player p = (Player) sender;
 		/* 35 */ if (!(sender instanceof Player))
 		/*    */ {
-			/* 37 */ sender.sendMessage("§cVoce nao e um jogador!");
+			/* 37 */ sender.sendMessage("ï¿½cVoce nao e um jogador!");
 			/* 38 */ return false;
 			/*    */ }
 		/* 40 */ if (commandLabel.equalsIgnoreCase("report")) {
@@ -49,13 +49,13 @@ import Kakashi.demon.Main;
 				/*    */ {
 					/* 46 */ if (reported.contains(p.getName()))
 					/*    */ {
-						/* 48 */ p.sendMessage("§cCalma extressado , ja tem um staff olhando");
+						/* 48 */ p.sendMessage("ï¿½cCalma extressado , ja tem um staff olhando");
 						/* 49 */ return true;
 						/*    */ }
 					/* 51 */ String reportMsg = StringUtils.join(/* 52 */ Arrays.copyOfRange(args, 1, args.length),
 							" ");
 					/* 53 */ reported.add(p.getName());
-					/* 54 */ p.sendMessage("§8Voce reportou o §b" + target.getName() + "§8 por §b" + reportMsg);
+					/* 54 */ p.sendMessage("ï¿½8Voce reportou o ï¿½b" + target.getName() + "ï¿½8 por ï¿½b" + reportMsg);
 					/* 55 */ Player[] arrayOfPlayer;
 					int j = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length;
 					for (int i = 0; i < j; i++) {
@@ -63,8 +63,8 @@ import Kakashi.demon.Main;
 						/* 56 */ if (s.hasPermission("fire.verreport")) {
 							/* 57 */ s.playSound(s.getLocation(), Sound.ANVIL_USE, 15.0F, 1.0F);
 							/* 58 */ s.sendMessage(ChatColor.RED + "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-							/* 59 */ s.sendMessage("§6§lPlayer reportado > §f§l" + target.getName()
-									+ " \n§6§lMotivo > §f§l " + reportMsg + "\n§6§lReporter >§f§l " + p.getName());
+							/* 59 */ s.sendMessage("ï¿½6ï¿½lPlayer reportado > ï¿½fï¿½l" + target.getName()
+									+ " \nï¿½6ï¿½lMotivo > ï¿½fï¿½l " + reportMsg + "\nï¿½6ï¿½lReporter >ï¿½fï¿½l " + p.getName());
 							/* 60 */ s.sendMessage(ChatColor.RED + "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
 							/* 61 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin,
 									new Runnable()
@@ -84,7 +84,7 @@ import Kakashi.demon.Main;
 				/*    */ }
 			/*    */ else
 			/*    */ {
-				/* 78 */ p.sendMessage("§cArgumentos insuficientes. Use: /" + commandLabel + " <jogador> <motivo>");
+				/* 78 */ p.sendMessage("ï¿½cArgumentos insuficientes. Use: /" + commandLabel + " <jogador> <motivo>");
 				/*    */ }
 			/*    */ }
 		/* 81 */ return false;

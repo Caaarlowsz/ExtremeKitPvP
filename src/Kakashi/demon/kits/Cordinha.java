@@ -10,7 +10,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.entity.Snowball;
 
 /*     */
-/*     */ import Kakashi.demon.Main;
+/*     */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import net.minecraft.server.v1_7_R4.EntityFishingHook;
 /*     */ import net.minecraft.server.v1_7_R4.EntityHuman;
 /*     */ import net.minecraft.server.v1_7_R4.EntitySnowball;
@@ -28,7 +28,7 @@ import net.minecraft.server.v1_7_R4.EntityFishingHook;
 	/*     */ public boolean isHooked;
 
 	/*     */
-	/*     */ public void Grappler(Main plugin) {
+	/*     */ public void Grappler(ExtremePvP plugin) {
 	}
 
 	/*     */

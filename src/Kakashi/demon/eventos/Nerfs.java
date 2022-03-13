@@ -17,7 +17,7 @@ import org.bukkit.Sound;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
 /*     */
-/*     */ import Kakashi.demon.Main;
+/*     */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*     */
 /*     */ public class Nerfs implements Listener
@@ -114,7 +114,7 @@ import org.bukkit.Sound;
 	/*     */ public void chatFormat(AsyncPlayerChatEvent e) {
 		/* 107 */ Player p = e.getPlayer();
 		/* 110 */ e
-				.setFormat(Ranks.getRankChat(p) + " " + ChatColor.GRAY + p.getDisplayName() + " §b§l§o» §f" + "%2$s");
+				.setFormat(Ranks.getRankChat(p) + " " + ChatColor.GRAY + p.getDisplayName() + " ï¿½bï¿½lï¿½oï¿½ ï¿½f" + "%2$s");
 		/*     */ }
 
 	/*     */
@@ -129,33 +129,33 @@ import org.bukkit.Sound;
 		/* 123 */ (e.getMessage().contains("/?")) ||
 		/* 124 */ (e.getMessage().contains("/help")) ||
 		/* 125 */ (e.getMessage().contains("/bukkit:me"))) {
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 				public void run() {
 					p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1.0F, 1.0F);
-					p.sendMessage("§e§l1...");
+					p.sendMessage("ï¿½eï¿½l1...");
 				}
 			}, 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 
 				public void run() {
 					p.playSound(p.getLocation(), Sound.CHEST_OPEN, 1.0F, 1.0F);
-					p.sendMessage("§e§l2...");
+					p.sendMessage("ï¿½eï¿½l2...");
 				}
 			}, 40L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 
 				public void run() {
 					p.playSound(p.getLocation(), Sound.CHEST_CLOSE, 1.0F, 1.0F);
-					p.sendMessage("§e§l3...");
+					p.sendMessage("ï¿½eï¿½l3...");
 				}
 			}, 60L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), new Runnable() {
 
 				public void run() {
 					p.playSound(p.getLocation(), Sound.BLAZE_HIT, 5.0F, 5.0F);
-					p.sendMessage("§e§lCRIADOR §4§lManoKakashi");
+					p.sendMessage("ï¿½eï¿½lCRIADOR ï¿½4ï¿½lManoKakashi");
 					/* 126 */ e.setCancelled(true);
 				}
 			}, 80L);

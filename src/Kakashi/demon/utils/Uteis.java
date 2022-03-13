@@ -7,7 +7,7 @@ package Kakashi.demon.utils;
 /*    */ import org.bukkit.Bukkit;
 /*    */ import org.bukkit.entity.Player;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */
@@ -22,7 +22,7 @@ import Kakashi.demon.Main;
 		/*    */
 		/* 18 */ cooldown.remove(p);
 		/* 19 */ cooldown.put(p, Long.valueOf(cooldownLength));
-		/* 20 */ Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), /* 21 */ new Runnable() {
+		/* 20 */ Bukkit.getScheduler().scheduleSyncDelayedTask(ExtremePvP.getPlugin(), /* 21 */ new Runnable() {
 			/*    */ public void run() {
 				/* 23 */ Uteis.cooldown.remove(p);
 				/*    */ }

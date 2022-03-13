@@ -23,17 +23,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.inventory.ItemStack;
 /*     */ import org.bukkit.util.Vector;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Pikachu implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Pikachu(Main plugin)
+	/*     */ public Pikachu(ExtremePvP plugin)
 	/*     */ {
 		/* 36 */ this.plugin = plugin;
 		/*     */ }
@@ -72,7 +72,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 68 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 68 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -81,7 +81,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 77 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 77 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 80 */ return false;
@@ -91,7 +91,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 85 */ p.getInventory().clear();
-		/* 86 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cPikachu!");
+		/* 86 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cPikachu!");
 		KitAPI.setKit(p, "Pikachu");
 		Scoreboard.iscoriboard(p);
 		/* 87 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -117,7 +117,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ {
 			/* 110 */ if (cooldown.contains(p))
 			/*     */ {
-				/* 112 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Acalme-se!");
+				/* 112 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Acalme-se!");
 				/* 113 */ return;
 				/*     */ }
 			/* 115 */ p.setVelocity(new Vector(0.0D, 3.0D, 0.0D));
@@ -130,7 +130,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ {
 					/* 123 */ if (p.getTargetBlock(null, 50).getType() == Material.GLASS)
 					/*     */ {
-						/* 125 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce nao pode fazer bugs.");
+						/* 125 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao pode fazer bugs.");
 						/* 126 */ return;
 						/*     */ }
 					/* 128 */ World w = p.getTargetBlock(null, 50).getLocation().getWorld();
@@ -147,7 +147,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ public void run()
 				/*     */ {
 					/* 141 */ Pikachu.nofall.remove(p);
-					/* 142 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Agora pode tomar dano de queda");
+					/* 142 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Agora pode tomar dano de queda");
 					/*     */ }
 				/* 144 */ }, 100L);
 			/* 145 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
@@ -155,7 +155,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ public void run()
 				/*     */ {
 					/* 149 */ Pikachu.cooldown.remove(p);
-					/* 150 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce pode usar o Pikachu novamente!");
+					/* 150 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce pode usar o Pikachu novamente!");
 					/*     */ }
 				/* 152 */ }, 600L);
 			/*     */ }

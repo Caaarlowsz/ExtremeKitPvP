@@ -9,16 +9,16 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.entity.Player;
 
 /*    */
-/*    */ import Kakashi.demon.Main;
+/*    */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */
 /*    */ public class Gm/*    */ implements CommandExecutor
 /*    */ {
-	/*    */ Main main;
+	/*    */ ExtremePvP main;
 
 	/*    */
-	/*    */ public Gm(Main plugin)
+	/*    */ public Gm(ExtremePvP plugin)
 	/*    */ {
 		/* 19 */ plugin = this.main;
 		/*    */ }
@@ -40,13 +40,13 @@ package Kakashi.demon.comandos;
 				/*    */ {
 					/* 36 */ player.setGameMode(GameMode.SURVIVAL);
 					/* 37 */ player
-							.sendMessage("§4§LGAMEMODE §e§l§oVoce alterou seu modo de jogo para §a§oSurvival §e§l§o!");
+							.sendMessage("ï¿½4ï¿½LGAMEMODE ï¿½eï¿½lï¿½oVoce alterou seu modo de jogo para ï¿½aï¿½oSurvival ï¿½eï¿½lï¿½o!");
 					/*    */ }
 				/* 39 */ if (args[0].equalsIgnoreCase("1"))
 				/*    */ {
 					/* 41 */ player.setGameMode(GameMode.CREATIVE);
 					/* 42 */ player
-							.sendMessage("§4§LGAMEMODE §e§l§oVoce alterou seu modo de jogo para §a§oCreative §e§l§o!");
+							.sendMessage("ï¿½4ï¿½LGAMEMODE ï¿½eï¿½lï¿½oVoce alterou seu modo de jogo para ï¿½aï¿½oCreative ï¿½eï¿½lï¿½o!");
 					/*    */ }
 				/* 44 */ return true;
 				/*    */ }

@@ -23,7 +23,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.inventory.ItemStack;
 /*     */ import org.bukkit.util.Vector;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -31,10 +31,10 @@ import Kakashi.demon.utils.Scoreboard;
 /*     */
 /*     */ public class Timelord/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Timelord(Main plugin)
+	/*     */ public Timelord(ExtremePvP plugin)
 	/*     */ {
 		/* 36 */ this.plugin = plugin;
 		/*     */ }
@@ -72,7 +72,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 67 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 67 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -81,7 +81,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 76 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 76 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 79 */ return false;
@@ -92,7 +92,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 85 */ p.getInventory().clear();
-		/* 86 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cTimelord!");
+		/* 86 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cTimelord!");
 		KitAPI.setKit(p, "Timelord");
 		Scoreboard.iscoriboard(p);
 		/* 87 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -118,7 +118,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ {
 			/* 110 */ if (cooldown.contains(p))
 			/*     */ {
-				/* 112 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Nao pode parar o tempo ainda , aguarde!");
+				/* 112 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Nao pode parar o tempo ainda , aguarde!");
 				/* 113 */ return;
 				/*     */ }
 			/* 115 */ cooldown.add(p);
@@ -130,7 +130,7 @@ import Kakashi.demon.utils.Scoreboard;
 					/* 121 */ p.setFallDistance(f);
 					/* 122 */ cantmove.add((Player) target);
 					/* 123 */ ((Player) target)
-							.sendMessage(ChatColor.RED + "§4§lKIT §7Sua visao foi pega por um timelord!");
+							.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Sua visao foi pega por um timelord!");
 					/* 124 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 					/*     */ {
 						/*     */ public void run()
@@ -139,7 +139,7 @@ import Kakashi.demon.utils.Scoreboard;
 							/*     */ {
 								/* 130 */ Timelord.cantmove.remove(target);
 								/* 131 */ ((Player) target)
-										.sendMessage(ChatColor.GREEN + "§4§lKIT §7Sua visao foi descongelada.");
+										.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Sua visao foi descongelada.");
 								/*     */ }
 							/*     */ }
 						/* 134 */ }, 200L);
@@ -150,7 +150,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ public void run()
 				/*     */ {
 					/* 141 */ Timelord.cooldown.remove(p);
-					/* 142 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce pode parar o tempo denovo!");
+					/* 142 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce pode parar o tempo denovo!");
 					/*     */ }
 				/* 144 */ }, 900L);
 			/*     */ }

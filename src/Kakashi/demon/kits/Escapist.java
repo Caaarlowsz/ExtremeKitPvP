@@ -25,17 +25,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerMoveEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Escapist implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Escapist(Main plugin)
+	/*     */ public Escapist(ExtremePvP plugin)
 	/*     */ {
 		/* 38 */ this.plugin = plugin;
 		/*     */ }
@@ -74,7 +74,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 70 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 70 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -83,7 +83,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 79 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 79 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 82 */ return false;
@@ -93,7 +93,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 87 */ p.getInventory().clear();
-		/* 88 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cEscapist!");
+		/* 88 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cEscapist!");
 		KitAPI.setKit(p, "Escapist");
 		Scoreboard.iscoriboard(p);
 		/* 89 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);

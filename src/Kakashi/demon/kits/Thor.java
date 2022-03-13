@@ -21,17 +21,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerJoinEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Thor implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Thor(Main plugin)
+	/*     */ public Thor(ExtremePvP plugin)
 	/*     */ {
 		/* 34 */ this.plugin = plugin;
 		/*     */ }
@@ -67,7 +67,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 63 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 63 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -76,7 +76,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 72 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 72 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 75 */ return false;
@@ -86,7 +86,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void giveKit(Player p)
 	/*     */ {
 		/* 80 */ p.getInventory().clear();
-		/* 81 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cThor!");
+		/* 81 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cThor!");
 		Scoreboard.iscoriboard(p);
 		KitAPI.setKit(p, "Thor");
 		/* 82 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -112,7 +112,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */ }
 			/* 105 */ if (cooldown.contains(p))
 			/*     */ {
-				/* 107 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7O thor esta em cooldown!");
+				/* 107 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7O thor esta em cooldown!");
 				/* 108 */ return;
 				/*     */ }
 			/* 110 */ cooldown.add(p);
@@ -122,7 +122,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/*     */ public void run()
 				/*     */ {
-					/* 117 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Pode usar o thor novamente!");
+					/* 117 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Pode usar o thor novamente!");
 					/* 118 */ Thor.cooldown.remove(p);
 					/*     */ }
 				/* 120 */ }, 200L);

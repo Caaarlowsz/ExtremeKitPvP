@@ -23,17 +23,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.potion.PotionEffect;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Tocha implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Tocha(Main plugin)
+	/*     */ public Tocha(ExtremePvP plugin)
 	/*     */ {
 		/* 36 */ this.plugin = plugin;
 		/*     */ }
@@ -69,7 +69,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 65 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 65 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -78,7 +78,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 74 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 74 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 77 */ return false;
@@ -88,7 +88,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 82 */ p.getInventory().clear();
-		/* 83 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cTocha!");
+		/* 83 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cTocha!");
 		KitAPI.setKit(p, "Tocha");
 		Scoreboard.iscoriboard(p);
 		/* 84 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);

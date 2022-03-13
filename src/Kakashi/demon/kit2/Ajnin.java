@@ -16,7 +16,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -33,7 +33,7 @@ public class Ajnin implements Listener, CommandExecutor {
 			Player localPlayer2 = (Player) paramEntityDamageByEntityEvent.getEntity();
 			if (KitAPI.getkit2(localPlayer1) == "Ajnin") {
 				a.put(localPlayer1, localPlayer2);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(ExtremePvP.plugin, new Runnable() {
 					public void run() {
 						cooldownbk.remove(localPlayer1);
 					}
@@ -50,7 +50,7 @@ public class Ajnin implements Listener, CommandExecutor {
 			/*    */ {
 				/* 4/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*    */ {
-					/* 49 */ jogador.sendMessage("§c§l§oVoce ja selecionou um kit !");
+					/* 49 */ jogador.sendMessage("ï¿½cï¿½lï¿½oVoce ja selecionou um kit !");
 					/*    */ }
 				/*    */ else
 				/*    */ {
@@ -68,7 +68,7 @@ public class Ajnin implements Listener, CommandExecutor {
 	/*    */
 	/*    */ public void giveKit(Player p)
 	/*    */ {
-		/* 69 */ p.sendMessage(ChatColor.GREEN + "Voce escolheu Ajnin Secundário! Pegue outro kit!");
+		/* 69 */ p.sendMessage(ChatColor.GREEN + "Voce escolheu Ajnin Secundï¿½rio! Pegue outro kit!");
 		KitAPI.setKit2(p, "Ajnin");
 		Scoreboard.iscoriboard(p);
 		/*    */ }
@@ -92,11 +92,11 @@ public class Ajnin implements Listener, CommandExecutor {
 						|| (((Long) b.get(localPlayer1)).longValue() < System.currentTimeMillis())) {
 					if (localPlayer1.getLocation().distance(localPlayer2.getLocation()) < 100.0D) {
 						localPlayer2.teleport(localPlayer1.getLocation());
-						localPlayer1.sendMessage("§7» §aTeleportado");
+						localPlayer1.sendMessage("ï¿½7ï¿½ ï¿½aTeleportado");
 						b.put(localPlayer1, Long.valueOf(System.currentTimeMillis() + 10000L));
 					}
 				} else {
-					localPlayer1.sendMessage("§7» §aVoce esta em cooldown de §6" + str + " §asegundos");
+					localPlayer1.sendMessage("ï¿½7ï¿½ ï¿½aVoce esta em cooldown de ï¿½6" + str + " ï¿½asegundos");
 				}
 			}
 		}

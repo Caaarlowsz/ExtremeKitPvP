@@ -8,7 +8,7 @@ package Kakashi.demon.comandos;
 /*    */ import org.bukkit.entity.Player;
 
 /*    */
-/*    */ import Kakashi.demon.Main;
+/*    */ import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 
 /*    */
 /*    */
@@ -16,7 +16,7 @@ package Kakashi.demon.comandos;
 /*    */ {
 
 	/*    */
-	/*    */ public Fly(Main plugin)
+	/*    */ public Fly(ExtremePvP plugin)
 	/*    */ {
 		/*    */ }
 
@@ -31,12 +31,12 @@ package Kakashi.demon.comandos;
 				/* 29 */ if (!p.getAllowFlight())
 				/*    */ {
 					/* 31 */ p.setAllowFlight(true);
-					/* 32 */ p.sendMessage("§6Fly Ativado para : " + ChatColor.RED + p.getName());
+					/* 32 */ p.sendMessage("ï¿½6Fly Ativado para : " + ChatColor.RED + p.getName());
 					/*    */ }
 				/*    */ else
 				/*    */ {
 					/* 36 */ p.setAllowFlight(false);
-					/* 37 */ p.sendMessage("§6Fly desativado para : " + ChatColor.RED + p.getName());
+					/* 37 */ p.sendMessage("ï¿½6Fly desativado para : " + ChatColor.RED + p.getName());
 					/*    */ }
 				/*    */ }
 			/*    */ else
@@ -47,16 +47,16 @@ package Kakashi.demon.comandos;
 					/* 45 */ if (!t.getAllowFlight())
 					/*    */ {
 						/* 47 */ t.setAllowFlight(true);
-						/* 48 */ t.sendMessage("§6Fly Ativado para : " + ChatColor.RED + t.getName());
+						/* 48 */ t.sendMessage("ï¿½6Fly Ativado para : " + ChatColor.RED + t.getName());
 						/*    */ }
 					/*    */ else
 					/*    */ {
 						/* 52 */ t.setAllowFlight(false);
-						/* 53 */ t.sendMessage("§6Fly desativado para : " + ChatColor.RED + t.getName());
+						/* 53 */ t.sendMessage("ï¿½6Fly desativado para : " + ChatColor.RED + t.getName());
 						/*    */ }
 					/*    */ }
 				/*    */ else {
-					/* 57 */ p.sendMessage("§4Erro: Jogador inexistente!");
+					/* 57 */ p.sendMessage("ï¿½4Erro: Jogador inexistente!");
 					/*    */ }
 				/*    */ }
 			/*    */ }

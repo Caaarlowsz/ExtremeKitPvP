@@ -31,7 +31,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.potion.PotionEffect;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -41,7 +41,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public Plugin plugin;
 
 	/*     */
-	/*     */ public Gladiator(Main plugin)
+	/*     */ public Gladiator(ExtremePvP plugin)
 	/*     */ {
 		/* 43 */ this.plugin = plugin;
 		/*     */ }
@@ -87,7 +87,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/* 81 */ if ((fighting.containsKey(p.getName())) || (fighting.containsKey(r.getName())))
 				/*     */ {
 					/* 83 */ event.setCancelled(true);
-					/* 84 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce ja esta em combate!");
+					/* 84 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce ja esta em combate!");
 					/* 85 */ return;
 					/*     */ }
 				/* 87 */ Integer currentID = Integer.valueOf(this.nextID);
@@ -112,7 +112,7 @@ import Kakashi.demon.utils.Scoreboard;
 								/*     */ {
 									/* 107 */ event.setCancelled(true);
 									/* 108 */ p.sendMessage(
-											ChatColor.RED + "§4§lKIT §7Voce nao pode criar sua arena aqui");
+											ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao pode criar sua arena aqui");
 									/* 109 */ return;
 									/*     */ }
 								/* 111 */ if (bY == 10) {
@@ -137,13 +137,13 @@ import Kakashi.demon.utils.Scoreboard;
 					/* 130 */ p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 					/* 131 */ r.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 					/* 132 */ p.sendMessage(ChatColor.GREEN
-							+ "§4§lKIT §7Voce desafiou um jogador! Voce tem 5 segundos de invencibilidade!");
+							+ "ï¿½4ï¿½lKIT ï¿½7Voce desafiou um jogador! Voce tem 5 segundos de invencibilidade!");
 					/* 133 */ p.sendMessage(ChatColor.AQUA
-							+ "§4§lKIT §7Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
+							+ "ï¿½4ï¿½lKIT ï¿½7Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
 					/* 134 */ r.sendMessage(
-							ChatColor.RED + "§4§lKIT §7Voce foi desafiado! Voce tem 5 segundos de invencibilidade!");
+							ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce foi desafiado! Voce tem 5 segundos de invencibilidade!");
 					/* 135 */ r.sendMessage(ChatColor.AQUA
-							+ "§4§lKIT §7Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
+							+ "ï¿½4ï¿½lKIT ï¿½7Caso nao tenha nenhum vencedor depois de 4 minutos, voce voltara ao seu local de origem!");
 					/* 136 */ fighting.put(p.getName(), r.getName());
 					/* 137 */ fighting.put(r.getName(), p.getName());
 					/* 140 */ this.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
@@ -176,9 +176,9 @@ import Kakashi.demon.utils.Scoreboard;
 								/* 163 */ Gladiator.this.oldl.remove(p.getName());
 								/* 164 */ Gladiator.this.oldl.remove(r.getName());
 								/* 165 */ p.sendMessage(ChatColor.RED
-										+ "§4§lKIT §7Nao houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
+										+ "ï¿½4ï¿½lKIT ï¿½7Nao houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
 								/* 166 */ r.sendMessage(ChatColor.RED
-										+ "§4§lKIT §7Nao houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
+										+ "ï¿½4ï¿½lKIT ï¿½7Nao houve nenhum vencedor, voce foi teleportado para o seu lugar de origem!");
 								/* 167 */ Location loc = (Location) Gladiator.this.localizacao.get(p);
 								/* 168 */ List<Location> cuboid = new ArrayList<>();
 								/*     */ int bZ;
@@ -233,7 +233,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ {
 			/* 215 */ e.setCancelled(true);
 			/* 216 */ p.updateInventory();
-			/* 217 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce nao pode dropar este item!");
+			/* 217 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao pode dropar este item!");
 			/* 218 */ return;
 			/*     */ }
 		/*     */ }
@@ -294,7 +294,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/* 268 */ fighting.remove(p.getName());
 			/* 271 */ Location old = (Location) this.oldl.get(t.getName());
 			/* 272 */ t.teleport(old);
-			/* 273 */ t.sendMessage(ChatColor.RED + "§4§lKIT §7O jogador " + p.getName() + " deslogou-se!");
+			/* 273 */ t.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7O jogador " + p.getName() + " deslogou-se!");
 			/* 274 */ Bukkit.getScheduler().cancelTask(this.id1);
 			/* 275 */ Bukkit.getScheduler().cancelTask(this.id2);
 			/* 276 */ t.removePotionEffect(PotionEffectType.WITHER);
@@ -344,7 +344,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/* 319 */ Location old = (Location) this.oldl.get(p.getName());
 			/* 320 */ k.teleport(old);
 			/* 321 */ k.sendMessage(
-					ChatColor.GREEN + "§4§lKIT §7Voce ganhou a batalha contra " + p.getName() + ChatColor.GREEN + "!");
+					ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou a batalha contra " + p.getName() + ChatColor.GREEN + "!");
 			/* 322 */ Bukkit.getScheduler().cancelTask(this.id1);
 			/* 323 */ Bukkit.getScheduler().cancelTask(this.id2);
 			/* 324 */ k.removePotionEffect(PotionEffectType.WITHER);
@@ -388,7 +388,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 366 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 366 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -396,7 +396,7 @@ import Kakashi.demon.utils.Scoreboard;
 					/*     */ }
 				/*     */ }
 			/*     */ else {
-				/* 374 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 374 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 377 */ return false;
@@ -406,7 +406,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public static void giveKit(Player p)
 	/*     */ {
 		/* 382 */ p.getInventory().clear();
-		/* 383 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cGladiator!");
+		/* 383 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cGladiator!");
 		KitAPI.setKit(p, "Gladiator");
 		Scoreboard.iscoriboard(p);
 		/* 384 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);

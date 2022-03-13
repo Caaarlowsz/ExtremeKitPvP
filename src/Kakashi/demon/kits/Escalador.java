@@ -26,17 +26,17 @@ import org.bukkit.event.player.PlayerMoveEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 /*     */ import org.bukkit.util.Vector;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Escalador/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Escalador(Main plugin)
+	/*     */ public Escalador(ExtremePvP plugin)
 	/*     */ {
 		/* 41 */ this.plugin = plugin;
 		/*     */ }
@@ -67,7 +67,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 67 */ jogador.sendMessage("§c§l§oVoce ja selecionou um kit !");
+					/* 67 */ jogador.sendMessage("ï¿½cï¿½lï¿½oVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {

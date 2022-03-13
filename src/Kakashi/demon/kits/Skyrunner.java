@@ -21,17 +21,17 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.event.player.PlayerMoveEvent;
 /*     */ import org.bukkit.inventory.ItemStack;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
 /*     */
 /*     */ public class Skyrunner/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Skyrunner(Main plugin)
+	/*     */ public Skyrunner(ExtremePvP plugin)
 	/*     */ {
 		/* 34 */ this.plugin = plugin;
 		/*     */ }
@@ -67,7 +67,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 63 */ jogador.sendMessage("§4§lKIT §7Voce ja selecionou um kit !");
+					/* 63 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½7Voce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -76,7 +76,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 72 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §7Voce nao possue este kit !");
+				/* 72 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 75 */ return false;
@@ -89,7 +89,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/* 81 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
 		/* 82 */ p.getInventory().addItem(new ItemStack[] { sword });
 		/* 83 */ p.getInventory().addItem(new ItemStack[] { new ItemStack(Material.VINE) });
-		/* 84 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §cVoce escolheu Skyrunner!");
+		/* 84 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½cVoce escolheu Skyrunner!");
 		KitAPI.setKit(p, "Skyrunner");
 		Scoreboard.iscoriboard(p);
 		KitAPI.darsopa(p);
@@ -116,7 +116,7 @@ import Kakashi.demon.utils.Scoreboard;
 		/*     */ {
 			/* 109 */ block.setType(Material.LEAVES);
 			/* 110 */ runtime.put(p, Integer.valueOf(((Integer) runtime.get(p)).intValue() - 1));
-			/* 111 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Ainda lhe restam " + runtime.get(p) + " blocos.");
+			/* 111 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Ainda lhe restam " + runtime.get(p) + " blocos.");
 			/* 112 */ Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable()
 			/*     */ {
 				/*     */ public void run()

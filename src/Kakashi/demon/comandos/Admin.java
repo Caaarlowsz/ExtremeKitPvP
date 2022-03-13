@@ -21,7 +21,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 
 public class Admin implements CommandExecutor, Listener {
@@ -31,17 +31,17 @@ public class Admin implements CommandExecutor, Listener {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("§f[§cErro§f] §cApenas jogadores podem usar isso");
+			sender.sendMessage("ï¿½f[ï¿½cErroï¿½f] ï¿½cApenas jogadores podem usar isso");
 			return true;
 		}
 		if (!sender.hasPermission("kitpvp.admin")) {
-			sender.sendMessage("§cSem Permissao");
+			sender.sendMessage("ï¿½cSem Permissao");
 			return true;
 		}
 		Player p = (Player) sender;
 		if (args.length == 0) {
 			if (!admin.contains(p.getName())) {
-				p.sendMessage("§bVoc\u00ea entrou no Modo Admin!");
+				p.sendMessage("ï¿½bVoc\u00ea entrou no Modo Admin!");
 				Player[] arrplayer = Bukkit.getOnlinePlayers();
 				int n = arrplayer.length;
 				int n2 = 0;
@@ -58,32 +58,32 @@ public class Admin implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				ItemStack redstone = new ItemStack(Material.REDSTONE);
 				ItemMeta redstonemeta = redstone.getItemMeta();
-				redstonemeta.setDisplayName("§b§lSair do modo Admin");
+				redstonemeta.setDisplayName("ï¿½bï¿½lSair do modo Admin");
 				redstone.setItemMeta(redstonemeta);
 				ItemStack info = new ItemStack(Material.NETHER_STAR);
 				ItemMeta infometa = info.getItemMeta();
-				infometa.setDisplayName("§6§lInformaçoes do Player");
+				infometa.setDisplayName("ï¿½6ï¿½lInformaï¿½oes do Player");
 				info.setItemMeta(infometa);
 				ItemStack repulsao = new ItemStack(Material.STICK);
 				ItemMeta repulsaometa = repulsao.getItemMeta();
 				repulsaometa.addEnchant(Enchantment.KNOCKBACK, 5, true);
-				repulsaometa.setDisplayName("§6§lTestar Knock-Back");
+				repulsaometa.setDisplayName("ï¿½6ï¿½lTestar Knock-Back");
 				repulsao.setItemMeta(repulsaometa);
 				ItemStack autosoup = new ItemStack(Material.BOWL);
 				ItemMeta autosoupmeta = autosoup.getItemMeta();
-				autosoupmeta.setDisplayName("§6§lTestar Auto-Soup");
+				autosoupmeta.setDisplayName("ï¿½6ï¿½lTestar Auto-Soup");
 				autosoup.setItemMeta(autosoupmeta);
 				ItemStack tr = new ItemStack(Material.MAGMA_CREAM);
 				ItemMeta trmeta = tr.getItemMeta();
-				trmeta.setDisplayName("§6§lTroca Rapida");
+				trmeta.setDisplayName("ï¿½6ï¿½lTroca Rapida");
 				tr.setItemMeta(trmeta);
 				ItemStack arena = new ItemStack(Material.MOB_SPAWNER);
 				ItemMeta arenameta = arena.getItemMeta();
-				arenameta.setDisplayName("§6§lArena");
+				arenameta.setDisplayName("ï¿½6ï¿½lArena");
 				arena.setItemMeta(arenameta);
 				ItemStack crash = new ItemStack(Material.BONE);
 				ItemMeta crashmeta = crash.getItemMeta();
-				crashmeta.setDisplayName("§6§lCrash");
+				crashmeta.setDisplayName("ï¿½6ï¿½lCrash");
 				crash.setItemMeta(crashmeta);
 				p.getInventory().setItem(0, redstone);
 				p.getInventory().setItem(1, info);
@@ -94,7 +94,7 @@ public class Admin implements CommandExecutor, Listener {
 				p.getInventory().setItem(6, arena);
 				p.updateInventory();
 			} else {
-				p.sendMessage("§c§lVocê saiu do modo Admin");
+				p.sendMessage("ï¿½cï¿½lVocï¿½ saiu do modo Admin");
 				p.getInventory().clear();
 				admin.remove(p.getName());
 				Player[] infometa = Bukkit.getOnlinePlayers();
@@ -130,11 +130,11 @@ public class Admin implements CommandExecutor, Listener {
 			Player p = e.getPlayer();
 			@SuppressWarnings("unused")
 			Player hp = t = (Player) e.getRightClicked();
-			p.sendMessage("§6Informaçoes de §6§l§o" + t.getName());
-			p.sendMessage("§6Sopa: §e" + Admin.getMaterial(t, Material.MUSHROOM_SOUP));
-			p.sendMessage("§6IP: §e" + Bukkit.getIp());
-			p.sendMessage("§6Fome: §e" + t.getFoodLevel());
-			p.sendMessage("§6Kit: §e" + KitAPI.getkit(t));
+			p.sendMessage("ï¿½6Informaï¿½oes de ï¿½6ï¿½lï¿½o" + t.getName());
+			p.sendMessage("ï¿½6Sopa: ï¿½e" + Admin.getMaterial(t, Material.MUSHROOM_SOUP));
+			p.sendMessage("ï¿½6IP: ï¿½e" + Bukkit.getIp());
+			p.sendMessage("ï¿½6Fome: ï¿½e" + t.getFoodLevel());
+			p.sendMessage("ï¿½6Kit: ï¿½e" + KitAPI.getkit(t));
 		}
 	}
 
@@ -172,7 +172,7 @@ public class Admin implements CommandExecutor, Listener {
 			t.getInventory().setItem(23, new ItemStack(Material.AIR));
 			t.getInventory().setItem(25, new ItemStack(Material.AIR));
 			t.getInventory().clear();
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -180,7 +180,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 25);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -188,7 +188,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 50);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -196,7 +196,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 75);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -204,7 +204,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 100);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -212,7 +212,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 125);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -220,7 +220,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 150);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -228,7 +228,7 @@ public class Admin implements CommandExecutor, Listener {
 					t.setHealth(2);
 				}
 			}, 175);
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -256,7 +256,7 @@ public class Admin implements CommandExecutor, Listener {
 				p.setGameMode(GameMode.SURVIVAL);
 				++n2;
 			}
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstance(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) ExtremePvP.getInstance(), new Runnable() {
 
 				@Override
 				public void run() {

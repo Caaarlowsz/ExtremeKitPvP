@@ -22,7 +22,7 @@ package Kakashi.demon.kits;
 /*     */ import org.bukkit.potion.PotionEffect;
 /*     */ import org.bukkit.potion.PotionEffectType;
 
-import Kakashi.demon.Main;
+import com.github.caaarlowsz.extrememc.kitpvp.ExtremePvP;
 import Kakashi.demon.eventos.KitAPI;
 import Kakashi.demon.utils.Scoreboard;
 
@@ -31,10 +31,10 @@ import Kakashi.demon.utils.Scoreboard;
 /*     */
 /*     */ public class Gambler/*     */ implements Listener, CommandExecutor
 /*     */ {
-	/*     */ public Main plugin;
+	/*     */ public ExtremePvP plugin;
 
 	/*     */
-	/*     */ public Gambler(Main plugin)
+	/*     */ public Gambler(ExtremePvP plugin)
 	/*     */ {
 		/* 35 */ this.plugin = plugin;
 		/*     */ }
@@ -70,7 +70,7 @@ import Kakashi.demon.utils.Scoreboard;
 			/*     */ {
 				/* 56 */ if (!(KitAPI.getkit(jogador) == ("Nenhum")))
 				/*     */ {
-					/* 64 */ jogador.sendMessage("§4§lKIT §cVoce ja selecionou um kit !");
+					/* 64 */ jogador.sendMessage("ï¿½4ï¿½lKIT ï¿½cVoce ja selecionou um kit !");
 					/*     */ }
 				/*     */ else
 				/*     */ {
@@ -79,7 +79,7 @@ import Kakashi.demon.utils.Scoreboard;
 				/*     */
 				/*     */ }
 			/*     */ else {
-				/* 73 */ jogador.sendMessage(ChatColor.RED + "§4§lKIT §cVoce nao possue este kit !");
+				/* 73 */ jogador.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½cVoce nao possue este kit !");
 				/*     */ }
 			/*     */ }
 		/* 76 */ return false;
@@ -89,7 +89,7 @@ import Kakashi.demon.utils.Scoreboard;
 	/*     */ public void giveKit(Player p)
 	/*     */ {
 		/* 81 */ p.getInventory().clear();
-		/* 82 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce escolheu §cGambler!");
+		/* 82 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce escolheu ï¿½cGambler!");
 		KitAPI.setKit(p, "Gambler");
 		Scoreboard.iscoriboard(p);
 		/* 83 */ ItemStack sword = new ItemStack(Material.STONE_SWORD);
@@ -127,32 +127,32 @@ import Kakashi.demon.utils.Scoreboard;
 				/* 117 */ p.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
 				/* 118 */ p.getInventory().setHelmet(new ItemStack(Material.LEATHER_HELMET));
 				/* 119 */ p.getInventory().setItem(0, new ItemStack(Material.IRON_SWORD));
-				/* 120 */ p.sendMessage(ChatColor.GOLD + "§4§lKIT §7Voce ganhou FULL COURO!!!");
+				/* 120 */ p.sendMessage(ChatColor.GOLD + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou FULL COURO!!!");
 				/*     */ }
 			/* 122 */ else if (rand == 99999)
 			/*     */ {
 				/* 124 */ p.damage(1.0E7D);
-				/* 125 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce ganhou A MORTE!!!");
+				/* 125 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou A MORTE!!!");
 				/*     */ }
 			/* 127 */ else if (rand > 89999)
 			/*     */ {
 				/* 129 */ p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 600, 0));
-				/* 130 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce ganhou FORÇA!!!");
+				/* 130 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou FORï¿½A!!!");
 				/*     */ }
 			/* 132 */ else if (rand > 79999)
 			/*     */ {
 				/* 134 */ p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 600, 0));
-				/* 135 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce ganhou FRAQUEZA!!!");
+				/* 135 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou FRAQUEZA!!!");
 				/*     */ }
 			/* 137 */ else if (rand > 69999)
 			/*     */ {
 				/* 139 */ p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 600, 0));
-				/* 140 */ p.sendMessage(ChatColor.GREEN + "§4§lKIT §7Voce ganhou VELOCIDADE!!!");
+				/* 140 */ p.sendMessage(ChatColor.GREEN + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou VELOCIDADE!!!");
 				/*     */ }
 			/* 142 */ else if (rand > 59999)
 			/*     */ {
 				/* 144 */ p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 600, 0));
-				/* 145 */ p.sendMessage(ChatColor.RED + "§4§lKIT §7Voce ganhou LENTIDAO!!!");
+				/* 145 */ p.sendMessage(ChatColor.RED + "ï¿½4ï¿½lKIT ï¿½7Voce ganhou LENTIDAO!!!");
 				/*     */ }
 			/* 147 */ else if (rand > 49999)
 			/*     */ {
