@@ -49,6 +49,10 @@ public class ExtremePvP extends JavaPlugin implements KitPvP, Listener {
     @Override
     public void onDisable() {
         super.onDisable();
+        KitPvPAPI.setInstance(null);
+
+        // TODO: Remover quando melhorar a classe principal
+        this.disable();
     }
 
     // TODO: Melhorar a classe principal
@@ -124,6 +128,9 @@ public class ExtremePvP extends JavaPlugin implements KitPvP, Listener {
         /* 153 */
         eventos();
 
+    }
+
+    public void disable() {
     }
 
     public void save2() {
